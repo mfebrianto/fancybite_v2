@@ -65,3 +65,10 @@ div.Section1 {
 .blank-content::before{
   content: "\00a0";
 }
+
+.vertical-center:before,{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}

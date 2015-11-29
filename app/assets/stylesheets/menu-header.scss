@@ -1,10 +1,16 @@
 .menu-header {
   height: 30%;
 
+  .centre-div{
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: red;
+    height: 50px;
+  }
+
   img{
-    padding-top: 1%;
-    padding-bottom: 1%;
-    height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
 }
