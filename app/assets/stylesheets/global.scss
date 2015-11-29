@@ -1,0 +1,59 @@
+.centre-text-align {
+  text-align: center;
+}
+
+.max-width-100 {
+  max-width: 100%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.margin-top{
+  margin-top: 1rem;
+}
+
+.margin-top-dbl{
+  margin-top: 2rem;
+}
+
+.margin-bottom{
+  margin-bottom: 1rem;
+}
+
+.margin-bottom-dbl{
+  margin-bottom: 2rem;
+}
+
+.text-centre{
+  text-align: center;
+}
+
+.background-black{
+  background-color: #000000;
+}
+
+@page Section1 {
+  size:8.27in 11.69in;
+  margin:.5in .5in .5in .5in;
+  mso-header-margin:.5in;
+  mso-footer-margin:.5in;
+  mso-paper-source:0;
+}
+
+
+
+div.Section1 {
+  page:Section1;
+}
+
+.a4{
+  height:297mm;
+  width:210mm;
+  border: solid;
+}
+
+.border-bottom{
+  border-bottom: solid;
+}
