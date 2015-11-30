@@ -57,18 +57,16 @@ div.Section1 {
 .border-bottom{
   border-bottom: solid;
 }
+//
+//.blank-content::after{
+//  content: "\00a0";
+//}
+//
+//.blank-content::before{
+//  content: "\00a0";
+//}
 
-.blank-content::after{
-  content: "\00a0";
-}
-
-.blank-content::before{
-  content: "\00a0";
-}
-
-.vertical-center:before,{
-  content: "";
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
+.no-decoration {
+  list-style:none;
+  text-decoration: none;
 }
