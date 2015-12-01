@@ -1,5 +1,10 @@
-.menu-header
-  %ul
-    %li.logo-column
-      .logo
-    %li
+.logo
+.menu-header-container
+  .menu-header
+    %ul
+      %li.home-menu-option.active
+        %a.test
+          = t(:home)
+      %li.menu-menu-option
+        %a
+          = t(:menu)
