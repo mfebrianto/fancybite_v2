@@ -1,35 +1,39 @@
 .logo{
-  display: table-cell;
-  vertical-align: middle;
-  line-height: 140px;
-
-  background-image: url('/assets/logo.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: url('/assets/logo.jpg') no-repeat center;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
 }
 
-.text-menu {
-  text-align: center;
-  line-height: 140px;
-}
-
-#parent {
-  height: 200px;
-//  background-color: red;
+.menu-header {
   border-bottom: solid 1px;
-}
-
-#floater {
-  float: left;
-  height: 50%;
+  height: 150px;
   width: 100%;
-  margin-bottom: -70px;
+
+  ul{
+    text-decoration: none;
+    list-style-type: none;
+  }
 }
 
-.child {
-  clear: both;
-  height: 140px;
-  background-color: green;
+.menu-banner {
+  line-height: 140px;
   text-align: center;
+  font-family: 'Philosopher,Georgia,serif';
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1rem;
+  color: mediumaquamarine;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.active{
+  color: white;
+  background-color: mediumaquamarine;
+}
+
+.logo-column{
+  width: 50%
 }

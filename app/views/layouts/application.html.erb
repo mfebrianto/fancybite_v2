@@ -14,12 +14,15 @@
 
   <body>
 
-    <%= render '/layouts/header' %>
-    <%= render '/layouts/menu_header' %>
+    <div class="platform">
 
-    <%= yield %>
+      <%= render '/layouts/header' %>
+      <%= render '/layouts/menu_header' %>
 
-    <%= render '/layouts/footer' %>
+      <%= yield %>
 
+      <%= render '/layouts/footer' %>
+
+    </div>
   </body>
 </html>
