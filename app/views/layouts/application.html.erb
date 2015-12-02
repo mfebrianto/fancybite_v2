@@ -14,15 +14,17 @@
 
   <body>
 
-    <div class="platform">
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
 
-      <%= render '/layouts/header' %>
-      <%= render '/layouts/menu_header' %>
+        <%= render '/layouts/header' %>
+        <%= render '/layouts/header_lian' %>
+        <%= render '/layouts/menu_header' %>
 
-      <%= yield %>
+        <%= yield %>
 
-      <%= render '/layouts/footer' %>
-
+        <%= render '/layouts/footer' %>
+      </div>
     </div>
   </body>
 </html>
