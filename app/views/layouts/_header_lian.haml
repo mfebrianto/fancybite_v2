@@ -1,7 +1,7 @@
 / start of header
 %header
   %nav.tab-bar
-    .bar-wrap
+    .content-wrap
       %aside.left-off-canvas-toggle.menu-icon.left.show-for-small-only 
         %span
       %section.title-area.left
@@ -10,12 +10,13 @@
             My Site
       %a.login.right{:href => '#'} login
   %section.menu-header-container
-    %a.logo{:href => "/"}
-    %ul.right.hide-for-small.inline-list
-      =render '/layouts/side_menu'
+    .content-wrap
+      %a.logo{:href => "/"}
+      %ul.left.hide-for-small.inline-list
+        =render '/layouts/side_menu'
 
 / mobile left nav content
-%aside#off-canvas-menu.left-off-canvas-menu
+%aside#off-canvas-menu.left-off-canvas-menu.show-for-small-only
   %nav
     %ul.off-canvas-list.margin-top.margin-bottom
       =render '/layouts/side_menu'

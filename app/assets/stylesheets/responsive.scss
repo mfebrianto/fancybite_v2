@@ -7,5 +7,16 @@
 @media screen and (min-width: 641px) {
   .logo {
     float: left;
+    width: 180px;
+    height: 180px;
+  }
+
+  .content-wrap {
+    width: 95%;
+  }
+
+  .menu-header-container {
+    height: 100px;
+    border-bottom: 1px dotted mediumaquamarine;
   }
 }

@@ -20,9 +20,12 @@
         <%= render '/layouts/header' %>
         <%= render '/layouts/header_lian' %>
         <%= render '/layouts/menu_header' %>
-
-        <%= yield %>
-
+        <!--start of the page content-->
+        <div class="content-wrap">
+          <%= yield %>
+          <%= render '/layouts/page_content' %>
+        </div>
+        <!--end of the page content-->
         <%= render '/layouts/footer' %>
       </div>
     </div>
