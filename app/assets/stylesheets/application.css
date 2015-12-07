@@ -17,4 +17,6 @@
  *= require header
  *= require menu-header
  *= require responsive
+ *= require jquery.bxslider
+ *= require features
  */
