@@ -1,5 +1,9 @@
-body{
-  background: url('/assets/wood.png')
+/*
+ * page layout style
+ */
+
+body {
+  background-image: asset-url('wood.png');
 }
 
 .off-canvas-wrap {
@@ -20,12 +24,4 @@ body{
   height: inherit;
   width: 98%;
   margin: auto;
-}
-
-footer {
-  background: #333333;
-  color: #FFFFFF;
-  height: 2.8125rem;
-  line-height: 2.8125rem;
-  position: relative
 }

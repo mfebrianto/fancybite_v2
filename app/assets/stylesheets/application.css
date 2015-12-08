@@ -12,9 +12,12 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
- *= require layout
- *= require header
- *= require menu-header
- *= require responsive
  */
+@import 'foundation_and_overrides';
+@import 'base/global';
+@import 'components/header';
+@import 'components/menu-header';
+@import 'components/layout';
+@import 'components/footer';
+@import 'responsive/mobile';
+@import 'responsive/desktop';

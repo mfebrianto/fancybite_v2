@@ -1,20 +1,18 @@
-@media screen and (max-width: 640px) {
-  .logo {
-    margin: auto;
-  }
-}
-
 @media screen and (min-width: 641px) {
+
+  //desktop logo style
   .logo {
     float: left;
     width: 180px;
     height: 180px;
   }
 
+  //page content wrap style
   .content-wrap {
     width: 95%;
   }
 
+  //desktop header top menu style
   .menu-header-container {
     height: 100px;
     border-bottom: 1px dotted mediumaquamarine;
