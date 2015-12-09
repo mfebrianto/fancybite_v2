@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require jquery.bxslider.min
 //= require features
+//= require awesome_products
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
