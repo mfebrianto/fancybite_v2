@@ -1,0 +1,14 @@
+.before-footer-wrapper::before {
+  box-sizing: border-box;
+}
+
+.before-footer-wrapper::after {
+  box-sizing: border-box;
+}
+
+.before-footer-wrapper {
+  background-color: deeppink;
+  max-width: 100% !important;
+  display: block;
+  position: relative;
+}

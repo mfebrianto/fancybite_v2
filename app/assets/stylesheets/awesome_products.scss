@@ -25,4 +25,34 @@
 
 .awesome-product-title{
   margin-left: 10px;
+  font-family: Philosopher;
+  line-height: 24px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #E75A39;
+}
+
+.awesome-product-description {
+  margin-left: 10px;
+  font-family: 'PT-Sans',Tahoma,Geneva,sans-serif;
+  font-size: 12.5px;
+}
+
+.awesome-product-price{
+  margin-left: 10px;
+  font-family: Philosopher;
+  line-height: 24px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #E75A39;
+}
+
+.awesome-products-wrapper {
+  .bx-viewport {
+    height: 290px !important;
+  }
 }

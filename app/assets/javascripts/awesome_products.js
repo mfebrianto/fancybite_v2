@@ -26,6 +26,7 @@ function sliderOptions(width){
             maxSlides: 1,
             slideWidth:0,
             moveSlides:1,
+            slideMargin: 5,
             responsive: false
         }
     }
