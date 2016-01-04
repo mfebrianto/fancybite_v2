@@ -1,0 +1,25 @@
+.shopping-cart{
+
+}
+
+.shopping-cart-label{
+  text-align: center;
+
+  .shopping-cart-header-label{
+    line-height: 1.618;
+    color: #706A64;
+    font-family: Roboto, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+  }
+}
+
+.shopping-cart-button{
+  text-align: center;
+
+  span{
+    background-color: red;
+    color: white;
+//    padding: 10px;
+//    margin-top: 10px;
+  }
+}
