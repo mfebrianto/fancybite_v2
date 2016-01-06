@@ -25,7 +25,7 @@
     width: 150px;
 
     .shopping-cart-icon{
-      background-color: red;
+      background-color: #a98a73;
       height: 40px;
       width: 50px;
       float: left;
@@ -35,19 +35,19 @@
     }
 
     .triangle-right{
-      background-color: blue;
+      background-color: pink;
       height: 40px;
       width: 20px;
       float: left;
 
       border-top: 20px solid transparent;
-      border-left: 18px solid red;
+      border-left: 18px solid #a98a73;
       border-bottom: 20px solid transparent;
     }
 
     .shopping-cart-amount{
-      background-color: blue;
-      height: 36px;
+      background-color: pink;
+      height: 40px;
       width: 80px;
       float: left;
 
@@ -59,7 +59,8 @@
 
       text-align: center;
 
-      margin-top: 2px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
 
   }
