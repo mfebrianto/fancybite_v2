@@ -3,4 +3,24 @@
   border: 2px solid;
   border-color: lightgray;
   border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 30px;
+}
+
+.menu-header{
+  background-color: mediumaquamarine;
+  height: 30px;
+  display: block;
+  clear: both;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 1px;
+
+  .page-title{
+    line-height: 30px;
+    width: auto;
+    color: white;
+    margin-left: 10px;
+  }
 }
