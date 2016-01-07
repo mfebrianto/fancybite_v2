@@ -1,18 +1,19 @@
 .menu-wrapper{
-  height: 100px;
   border: 2px solid;
   border-color: lightgray;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 10px;
   margin-bottom: 30px;
 }
 
 .menu-header{
   background-color: mediumaquamarine;
   height: 30px;
-  display: block;
+//  display: inline-block;
   clear: both;
+  float: left;
   width: 100%;
   margin-top: 15px;
   border-radius: 1px;
@@ -23,4 +24,14 @@
     color: white;
     margin-left: 10px;
   }
+}
+
+.small-space {
+  clear: both;
+  height: 10px;
+}
+
+.menu-item {
+  background-color: red;
+  margin-top: 5px;
 }
