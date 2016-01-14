@@ -1,0 +1,16 @@
+= form_for @menu, url: admin_menu_index_path do |f|
+  .row
+    .large-4.columns
+      = f.label :name
+      = f.text_field :name
+  .row
+    .large-4.columns
+      = f.label :description
+      = f.text_field :description
+  .row
+    .large-4.columns
+      = f.label :price
+      = f.text_field :price
+  .row
+    .large-4.columns
+      = submit_tag 'save'
