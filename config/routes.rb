@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :dashboard
-    resources :menu
+    resources :menus
   end
 
   # You can have the root of your site routed with "root"

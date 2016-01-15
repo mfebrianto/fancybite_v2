@@ -1,0 +1,12 @@
+This is show
+
+.row
+= @menu.id
+= @menu.name
+
+.row
+= link_to 'show all menu', admin_menus_path
+.row
+= link_to 'edit', edit_admin_menu_path(@menu)
+.row
+= link_to 'delete', admin_menu_path(@menu), method: :delete
