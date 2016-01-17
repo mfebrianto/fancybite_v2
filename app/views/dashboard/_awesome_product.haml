@@ -1,9 +1,9 @@
 .awesome-product-wrapper
   .awesome-product-image-wrapper
-    %img.awesome-product-image{src: '/assets/prod_a'}
+    %img.awesome-product-image{src: product.picture.url(:medium)}
   .awesome-product-title
-    Cheese Burger
+    = product.name
   .awesome-product-description
-    asdasdadasdasdasd
+    = product.description
   .awesome-product-price
-    $4.56
+    = "$ #{product.price}"

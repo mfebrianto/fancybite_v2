@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115073434) do
+ActiveRecord::Schema.define(version: 20160117220827) do
 
   create_table "menus", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160115073434) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.boolean  "portfolio"
+    t.boolean  "part_number"
   end
 
   create_table "users", force: :cascade do |t|
