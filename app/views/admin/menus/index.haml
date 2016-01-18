@@ -8,6 +8,10 @@
       %th
         price
       %th
+        portfolio
+      %th
+        featured
+      %th
         image
   %tbody
     - @all_menu.each do |menu|
@@ -18,6 +22,10 @@
           = menu.description
         %td
           = menu.price
+        %td
+          = menu.portfolio
+        %td
+          = menu.featured
         %td
           = image_tag menu.picture.url(:thumb)
 

@@ -1,9 +1,9 @@
 %h3.portfolio-menu-title
-  Celebration Cakes
+  = product.name
 .portfolio-menu-img-wrap
-  %img{src: '/assets/portfolio-06-280x180.jpg'}
+  %img.portfolio-img{src: product.picture.url(:medium)}
 .portfolio-menu-description
-  The best, most juicy burgers for the grill. Get burger grilling tips and find recipes for cheese lovers, bacon lovers
+  = product.description
 %a.portfolio-menu-view-more-wrapper
   %span.portfolio-menu-view-more
     view more

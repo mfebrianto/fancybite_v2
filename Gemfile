@@ -38,6 +38,7 @@ gem 'foundation-rails'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 
 gem 'paperclip', '~> 4.3'
+gem 'mysql2', '~> 0.4.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
