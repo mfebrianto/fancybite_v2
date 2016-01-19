@@ -13,7 +13,6 @@ class MenusController < ApplicationController
     temp_array = []
     original_array.each do |array_member|
       temp_array << array_member
-      Rails.logger.info ">>>>>>>temp_array>>>>#{temp_array}"
 
       if index == (new_dimension-1) || (order == original_array.count - 1)
         index = 0

@@ -14,8 +14,11 @@ class Admin::MenusController < Admin::AdminController
 
   def update
     @menu = Menu.find(param_id['id'])
-    @menu.update_attributes(menu_params)
-    render 'show'
+    if @menu.update_attributes(menu_params)
+      render 'show'
+    else
+      render 'edit'
+    end
   end
 
   def create
