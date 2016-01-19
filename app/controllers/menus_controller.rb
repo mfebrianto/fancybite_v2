@@ -4,6 +4,10 @@ class MenusController < ApplicationController
     @foods_array_of_3 = convert_array_to_dimension(Menu.all, 3)
   end
 
+  def show
+
+  end
+
   private
 
   def convert_array_to_dimension(original_array, new_dimension)
