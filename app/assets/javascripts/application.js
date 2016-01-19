@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require jquery.bxslider.min
 //= require features
 //= require awesome_products
