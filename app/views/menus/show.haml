@@ -1,1 +1,21 @@
 = render '/menus/shopping_cart'
+
+.menu-wrapper
+  .small-space
+  .row
+    .medium-5.large-5.columns
+      %img.menu-show-image{src: @food.picture.url(:medium)}
+    .medium-7.large-7.columns
+      .row
+        %h2
+          = @food.name
+      .row
+        .menu-food-description-wrapper
+          = @food.description
+      .row
+        %h2
+          = "$#{@food.price}"
+
+  .row
+    .menu-show-button
+      = link_to 'Back', menus_path, class: 'button'

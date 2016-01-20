@@ -5,7 +5,7 @@ class MenusController < ApplicationController
   end
 
   def show
-
+    @food = Menu.find(params[:id])
   end
 
   private
