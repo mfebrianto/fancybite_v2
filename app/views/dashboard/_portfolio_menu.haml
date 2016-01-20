@@ -4,6 +4,6 @@
   %img.portfolio-img{src: product.picture.url(:medium)}
 .portfolio-menu-description
   = product.description
-.portfolio-menu-view-more-wrapper
+= link_to menus_path, class: 'portfolio-menu-view-more-wrapper' do
   %span.portfolio-menu-view-more
     view more

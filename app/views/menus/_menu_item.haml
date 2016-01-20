@@ -11,5 +11,5 @@
         %p
           = food.description
       %h2.menu-price
-        = food.price
+        = "$#{food.price}"
       = link_to 'Detail', menu_path(food.id), class: 'button'
