@@ -1,3 +1,5 @@
+@import "global";
+
 .awesome-products-title{
   color: #E75A39;
   font-family: Philosopher;
@@ -37,8 +39,9 @@
 
 .awesome-product-description {
   margin-left: 10px;
-  font-family: 'PT-Sans',Tahoma,Geneva,sans-serif;
+  font-family: 'PT-Sans', Tahoma, Geneva, sans-serif;
   font-size: 12.5px;
+  @include overflow-handler;
 }
 
 .awesome-product-price{

@@ -1,3 +1,9 @@
+@mixin overflow-handler{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .centre-text-align {
   text-align: center;
 }

@@ -1,3 +1,5 @@
+@import "global";
+
 .portfolio-menu-title{
   text-align: center;
   padding-bottom: .5em;
@@ -18,6 +20,7 @@
   color: #706A64;
   font-weight: 300;
   text-align: left;
+  @include overflow-handler
 }
 
 .portfolio-menu-view-more-wrapper{
