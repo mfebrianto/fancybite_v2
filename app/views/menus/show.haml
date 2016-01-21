@@ -6,13 +6,13 @@
     .medium-5.large-5.columns
       %img.menu-show-image{src: @food.picture.url(:medium)}
     .medium-7.large-7.columns
-      .row
+      %div
         %h2
           = @food.name
-      .row
+      %div
         .menu-food-description-wrapper
           = @food.description
-      .row
+      %div
         %h2
           = "$#{@food.price}"
 

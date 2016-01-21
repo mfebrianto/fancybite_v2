@@ -3,5 +3,5 @@ $(document).ready(function(){
 
     $(document).foundation();
     $('.left-off-canvas-toggle').on('click',function(){});
-    
+
 });
