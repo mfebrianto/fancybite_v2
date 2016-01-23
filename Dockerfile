@@ -21,5 +21,14 @@ RUN SECRET_KEY_BASE=c4c444c016046dd259ad1953c78866e954f804c7d1d75e992177688484f8
 
 ADD . /fancybite
 WORKDIR /fancybite
+ADD start.sh start.sh
+RUN chmod +x /fancybite/start.sh
 RUN RAILS_ENV=production bundle exec rake assets:precompile --trace
-CMD ["rails","server","-b","0.0.0.0"]
+
+WORKDIR /fancybite
+
+RUN more /fancybite/tmp/pids/server.pid
+
+EXPOSE 3000
+
+CMD /fancybite/start.sh
