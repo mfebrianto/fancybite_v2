@@ -17,8 +17,6 @@ ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
 RUN bundle install
 
-RUN SECRET_KEY_BASE=c4c444c016046dd259ad1953c78866e954f804c7d1d75e992177688484f8ab5f8aa59d4848b0d4fa12b0d404b77867dab94588fe55b1d038be75d1ede251d1d1
-
 ADD . /fancybite
 WORKDIR /fancybite
 ADD start.sh start.sh
