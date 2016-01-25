@@ -13,7 +13,7 @@
     - @all_features.each do |featured|
       %tr
         %td
-          = link_to featured.name, admin_featured_path(featured.id)
+          = link_to featured.name, admin_feature_path(featured.id)
         %td
           = featured.description
         %td
