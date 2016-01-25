@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125050703) do
+ActiveRecord::Schema.define(version: 20160125115523) do
+
+  create_table "features", force: :cascade do |t|
+    t.string   "name",                       limit: 255
+    t.string   "description",                limit: 255
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "picture_large_file_name",    limit: 255
+    t.string   "picture_large_content_type", limit: 255
+    t.integer  "picture_large_file_size",    limit: 4
+    t.datetime "picture_large_updated_at"
+    t.string   "picture_small_file_name",    limit: 255
+    t.string   "picture_small_content_type", limit: 255
+    t.integer  "picture_small_file_size",    limit: 4
+    t.datetime "picture_small_updated_at"
+  end
 
   create_table "menus", force: :cascade do |t|
     t.string   "name",                 limit: 255

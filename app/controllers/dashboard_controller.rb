@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
     # binding.pry
     @awesome_products = Menu.all
     @portfolio_products = Menu.where(portfolio: true)
-    @featured_products = Menu.where(featured: true)
+    @featured_products = Feature.all
   end
 
 end

@@ -1,0 +1,22 @@
+= form_for [:admin, @feature] do |f|
+  .row
+    .large-4.columns
+      = f.label :name
+      = f.text_field :name
+  .row
+    .large-4.columns
+      = f.label :description
+      = f.text_field :description
+  .row
+    .large-4.columns
+      = f.label :picture_small
+      = f.file_field :picture_small
+      = @feature.errors[:picture_small][0] if @feature.errors[:picture_small]
+  .row
+    .large-4.columns
+      = f.label :picture_large
+      = f.file_field :picture_large
+      = @feature.errors[:picture_large][0] if @feature.errors[:picture_large]
+  .row
+    .large-4.columns
+      = f.submit

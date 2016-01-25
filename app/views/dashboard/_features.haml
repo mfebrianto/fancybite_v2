@@ -1,5 +1,7 @@
 .features
   %ul.bxslider
     - @featured_products.each do |featured|
-      %li
-        %img.featured-image{src: featured.picture.url(:large)}
+      %li.featured-image-large-wrapper
+        %img.featured-image-large{src: featured.picture_large.url(:original)}
+      -#%li.featured-image-small-wrapper
+      -#  %img.featured-image-small{src: featured.picture_small.url(:original)}

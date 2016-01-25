@@ -1,0 +1,24 @@
+%table
+  %thead
+    %tr
+      %th
+        name
+      %th
+        description
+      %th
+        image small
+      %th
+        image large
+  %tbody
+    - @all_features.each do |featured|
+      %tr
+        %td
+          = link_to featured.name, admin_featured_path(menu.id)
+        %td
+          = featured.description
+        %td
+          = image_tag featured.picture_small.url(:thumb)
+        %td
+          = image_tag featured.picture_large.url(:thumb)
+
+= link_to 'add features', new_admin_feature_path

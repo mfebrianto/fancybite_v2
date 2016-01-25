@@ -1,0 +1,16 @@
+This is featured
+
+.row
+= @feature.id
+= @feature.name
+.row
+  = image_tag @feature.picture_small.url(:medium)
+.row
+  = image_tag @feature.picture_large.url(:medium)
+
+.row
+= link_to 'show all menu', admin_features_path
+.row
+= link_to 'edit', edit_admin_feature_path(@feature)
+.row
+= link_to 'delete', admin_feature_path(@feature), method: :delete
