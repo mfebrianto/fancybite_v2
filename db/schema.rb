@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117220827) do
+ActiveRecord::Schema.define(version: 20160125050703) do
 
   create_table "menus", force: :cascade do |t|
     t.string   "name",                 limit: 255
     t.string   "description",          limit: 255
-    t.decimal  "price",                            precision: 10
+    t.decimal  "price",                            precision: 10, scale: 2
     t.string   "picture_file_name",    limit: 255
     t.string   "picture_content_type", limit: 255
     t.integer  "picture_file_size",    limit: 4
