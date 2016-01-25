@@ -1,0 +1,10 @@
+.menu-wrapper
+  .menu-header
+    .page-title
+      our menu
+
+  .small-space
+  - @foods_array_of_3.each do |food_array_of_3|
+    .row
+      - food_array_of_3.each do |food|
+        = render '/menus/menu_item', food: food

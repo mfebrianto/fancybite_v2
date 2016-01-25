@@ -1,0 +1,10 @@
+= link_to menu_path(product.id) do
+  .awesome-product-wrapper
+    .awesome-product-image-wrapper
+      %img.awesome-product-image{src: product.picture.url(:medium)}
+    .awesome-product-title
+      = product.name
+    .awesome-product-description
+      = product.description
+    .awesome-product-price
+      = "$#{product.price}"

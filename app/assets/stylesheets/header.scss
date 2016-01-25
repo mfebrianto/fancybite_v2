@@ -1,15 +1,9 @@
-.has-form {
-  position: absolute;
-  top: 0;
-  left: 6rem; // adjust distance from left here
-  min-width: 14rem; // adjust width here
-
-  @media only screen and (max-width: 40em) {
-    min-width: 10rem;
-    top: 0.5rem;
-
-    .button {
-      height: 1.85rem;
-    }
-  }
+.logo{
+  background: image-url('Fixed_logo_fancybite_warna.png') no-repeat center;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  z-index: 2;
+  display: block;
+  position: relative;
 }

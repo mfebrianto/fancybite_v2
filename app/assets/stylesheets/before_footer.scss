@@ -1,0 +1,37 @@
+.before-footer-wrapper::before {
+  box-sizing: border-box;
+}
+
+.before-footer-wrapper::after {
+  box-sizing: border-box;
+}
+
+.before-footer-wrapper {
+  background-color: pink;
+  max-width: 100% !important;
+  display: block;
+  position: relative;
+  border-top: solid 5px;
+  border-color: antiquewhite;
+  padding-top: 20px;
+
+  h3{
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  a{
+    font-family: Roboto, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    line-height: 1.618;
+    -webkit-font-smoothing: antialiased;
+    color: #FFFFFF;
+    font-size: 15px;
+  }
+
+  ul{
+    text-decoration: none;
+    list-style-type: none;
+  }
+}

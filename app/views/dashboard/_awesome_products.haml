@@ -1,0 +1,7 @@
+.awesome-products-wrapper
+  .awesome-products-title
+    Few of our Awesome Products
+  %ul.awesome-products
+    - @awesome_products.each do |awesome_product|
+      %li
+        = render '/dashboard/awesome_product', product: awesome_product

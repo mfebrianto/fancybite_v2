@@ -1,0 +1,5 @@
+.features
+  %ul.bxslider
+    - @featured_products.each do |featured|
+      %li
+        %img.featured-image{src: featured.picture.url(:large)}

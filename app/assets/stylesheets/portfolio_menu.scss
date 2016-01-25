@@ -1,0 +1,50 @@
+@import "global";
+
+.portfolio-menu-title{
+  text-align: center;
+  padding-bottom: .5em;
+}
+
+.portfolio-menu-img-wrap {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #E0DDDD;
+  display: block;
+  margin: 0 0 23px;
+  padding: 10px;
+  position: relative;
+}
+
+.portfolio-menu-description{
+  font-size: 12px;
+  margin: 0 10px 21px;
+  color: #706A64;
+  font-weight: 300;
+  text-align: left;
+  @include overflow-handler
+}
+
+.portfolio-menu-view-more-wrapper{
+  line-height: 27px;
+  display: block;
+  text-align: center;
+  margin: 10px 0 0;
+  color: #FFFFFF;
+  height: 30px;
+  margin-bottom: 1em;
+}
+
+.portfolio-menu-view-more {
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 0 #917460;
+  padding: 0 17px;
+  display: inline-block;
+  font-style: italic;
+  text-transform: lowercase;
+  font-family: Philosopher,Georgia,serif;
+  -webkit-border-radius: 3px;
+  background-color: coral;
+}
+
+.portfolio-img {
+  height: 180px;
+}

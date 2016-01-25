@@ -1,0 +1,94 @@
+@import "global";
+
+.menu-wrapper{
+  border: 2px solid;
+  border-color: lightgray;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.menu-header{
+  background-color: mediumaquamarine;
+  height: 30px;
+//  display: inline-block;
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 1px;
+
+  .page-title{
+    line-height: 30px;
+    width: auto;
+    color: white;
+    margin-left: 10px;
+  }
+}
+
+.small-space {
+  clear: both;
+  height: 10px;
+}
+
+.menu-item {
+  margin-top: 30px;
+  height: 410px;
+}
+
+.item-content{
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 1px;
+  border: 2px solid;
+  border-color: gray;
+  min-height: 410px;
+}
+
+
+
+@media only screen
+and (min-width : 439px)
+and (max-width : 627px) {
+  .item-content{
+    min-height: 200px;
+  }
+
+  .menu-img-wrapper{
+    float: left;
+  }
+
+  .menu-description-wrapper{
+    float: left;
+  }
+}
+
+.menu-description{
+  @include overflow-handler
+}
+
+.menu-food-name {
+  height: 50px;
+}
+
+.menu-show-image{
+  border: 10px solid;
+  border-color: #e7e7e7;
+}
+
+.menu-show-button{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.menu-food-description-wrapper{
+  height: 100px;
+
+  line-height: 1.618;
+  color: #706A64;
+  font-family: Roboto, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  margin-bottom: 15px;
+}

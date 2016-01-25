@@ -1,0 +1,4 @@
+.row
+  - @portfolio_products.each do |portfolio|
+    .medium-4.columns
+      = render '/dashboard/portfolio_menu', product: portfolio

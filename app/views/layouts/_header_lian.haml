@@ -1,0 +1,28 @@
+/ start of header
+%header
+  %nav.tab-bar
+    .content-wrap
+      %aside.left-off-canvas-toggle.menu-icon.left.show-for-small-only 
+        %span
+      %section.title-area.left
+        %h2
+          %a{:href => "#"}
+            -#order@fancybite.com.au
+      %a.login.right{:href => '#'}
+        -#login
+  %section.menu-header-container
+    .content-wrap
+      %a.logo{:href => "/"}
+      %ul.left.hide-for-small.inline-list
+        =render '/layouts/side_menu'
+
+/ mobile left nav content
+%aside#off-canvas-menu.left-off-canvas-menu.show-for-small-only
+  %nav
+    %ul.off-canvas-list.margin-top.margin-bottom
+      =render '/layouts/side_menu'
+/ end of mobile left nav content
+/ close the off-canvas menu
+%a.exit-off-canvas
+
+

@@ -1,0 +1,9 @@
+%h3.portfolio-menu-title
+  = product.name
+.portfolio-menu-img-wrap
+  %img.portfolio-img{src: product.picture.url(:medium)}
+.portfolio-menu-description
+  = product.description
+= link_to menus_path, class: 'portfolio-menu-view-more-wrapper' do
+  %span.portfolio-menu-view-more
+    view more

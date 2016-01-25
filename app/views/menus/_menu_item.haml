@@ -1,0 +1,15 @@
+.large-4.medium-4.columns.menu-item
+  .item-content
+    .menu-img-wrapper
+      %img{src: food.picture.url(:medium)}
+    .menu-description-wrapper
+      .small-space
+      .menu-food-name
+        %h2
+          = food.name
+      .menu-description
+        %p
+          = food.description
+      %h2.menu-price
+        = "$#{food.price}"
+      = link_to 'Detail', menu_path(food.id), class: 'button'

@@ -1,0 +1,33 @@
+- Rails.logger.info ">>>>>errors>>#{@menu.errors.inspect}"
+
+= form_for [:admin, @menu] do |f|
+  .row
+    .large-4.columns
+      = f.label :name
+      = f.text_field :name
+  .row
+    .large-4.columns
+      = f.label :description
+      = f.text_field :description
+  .row
+    .large-4.columns
+      = f.label :price
+      = f.text_field :price
+  .row
+    .large-4.columns
+      = f.label :picture
+      = f.file_field :picture
+      = @menu.errors[:picture][0] if @menu.errors[:picture]
+
+  .row
+    .large-4.columns
+      = f.label :portfolio
+      = f.check_box :portfolio
+  .row
+    .large-4.columns
+      = f.label :featured
+      = f.check_box :featured
+
+  .row
+    .large-4.columns
+      = f.submit

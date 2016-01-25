@@ -1,0 +1,16 @@
+db:
+  image: library/mysql:5.6.22
+  ports:
+    - "3306:3306"
+  env_file:
+    - '.env.db'
+web:
+  build: .
+  volumes:
+    - .:/fancybite
+  ports:
+    - "3000:3000"
+  links:
+    - db
+  env_file:
+    - '.env.web'
