@@ -1,0 +1,6 @@
+Start project : 2016-01-26
+Release Date :
+
+Technical improvement :
+1. Rubocop installed
+2. unit test for Menu model
