@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :dashboard
     resources :menus
     resources :features
+    resources :feature_controls
   end
 
   # You can have the root of your site routed with "root"

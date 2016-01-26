@@ -1,0 +1,18 @@
+%table
+  %thead
+    %tr
+      %th
+        name
+      %th
+        description
+      %th
+        disabled?
+  %tbody
+    - @feature_controls.each do |feature_control|
+      %tr
+        %td
+          = feature_control.name
+        %td
+          = feature_control.description
+        %td
+          = feature_control.disabled

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125115523) do
+ActiveRecord::Schema.define(version: 20160126212344) do
+
+  create_table "feature_controls", force: :cascade do |t|
+    t.string  "name",        limit: 255
+    t.string  "description", limit: 255
+    t.boolean "disabled"
+  end
 
   create_table "features", force: :cascade do |t|
     t.string   "name",                       limit: 255
