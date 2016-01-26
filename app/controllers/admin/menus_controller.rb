@@ -23,8 +23,11 @@ class Admin::MenusController < Admin::AdminController
 
   def create
     @menu = Menu.new(menu_params)
-    @menu.save
-    render 'show'
+    if @menu.save
+      render 'show'
+    else
+      render 'new'
+    end
   end
 
   def show
