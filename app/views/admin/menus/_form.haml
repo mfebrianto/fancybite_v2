@@ -1,18 +1,22 @@
-- Rails.logger.info ">>>>>errors>>#{@menu.errors.inspect}"
-
 = form_for [:admin, @menu] do |f|
   .row
     .large-4.columns
       = f.label :name
       = f.text_field :name
+      = @menu.errors[:name][0] if @menu.errors[:name]
+
   .row
     .large-4.columns
       = f.label :description
       = f.text_field :description
+      = @menu.errors[:description][0] if @menu.errors[:description]
+
   .row
     .large-4.columns
       = f.label :price
       = f.text_field :price
+      = @menu.errors[:price][0] if @menu.errors[:price]
+
   .row
     .large-4.columns
       = f.label :picture

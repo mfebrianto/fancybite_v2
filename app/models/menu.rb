@@ -4,6 +4,7 @@ class Menu < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 
   validate :image_dimensions, if: Proc.new { |a| a.picture.queued_for_write[:original].present? }
+  validates :name, :description, :price, :picture, presence: true
 
   private
 
@@ -15,5 +16,4 @@ class Menu < ActiveRecord::Base
     errors.add(:picture, "Width must be #{required_width}px") unless dimensions.width == required_width
     errors.add(:picture, "Height must be #{required_height}px") unless dimensions.height == required_height
   end
-
 end

@@ -6,11 +6,19 @@ development:
   password: password
   host: 127.0.0.1
   port: 3306
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: fancybite_test
+  username: root
+  password: password
+  host: 127.0.0.1
+  port: 3306
 production:
   adapter: mysql2
   encoding: utf8
   database: fancybite_prod
   username: root
   password: password
-  host: db
+  host: db  #hostname based on docker-compose
   port: 3306
