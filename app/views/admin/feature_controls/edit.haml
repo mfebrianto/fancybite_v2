@@ -1,24 +1,25 @@
 %h1
   Edit Feature Control
 
-%table
-  %thead
-    %tr
-      %th
-        name
-      %th
-        description
-      %th
-        disabled?
-  %tbody
-    - @feature_controls.each do |feature_control|
+= form_tag(admin_feature_controls_update_all_path, method: :post) do
+  %table
+    %thead
       %tr
-        %td
-          = feature_control.name
-        %td
-          = feature_control.description
-        %td
-          = feature_control.disabled
+        %th
+          name
+        %th
+          description
+        %th
+          disabled?
+    %tbody
+      - @feature_controls.each do |feature_control|
+        %tr
+          %td
+            = feature_control.name
+          %td
+            = feature_control.description
+          %td
+            = check_box_tag "feature_control[#{feature_control.id}]", '', feature_control.disabled
 
-= button_tag 'save'
-= link_to 'edit', admin_feature_controls_edit_path
+  = submit_tag 'save'
+  = link_to 'cancel', admin_feature_controls_path
