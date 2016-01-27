@@ -19,7 +19,8 @@
           %td
             = feature_control.description
           %td
-            = check_box_tag "feature_control[#{feature_control.id}]", '', feature_control.disabled
+            = hidden_field_tag "feature_control[#{feature_control.id}]", ''
+            = check_box_tag "feature_control[#{feature_control.id}]", feature_control.disabled, feature_control.disabled
 
   = submit_tag 'save'
   = link_to 'cancel', admin_feature_controls_path
