@@ -1,0 +1,22 @@
+%h1
+  Feature Control
+%table
+  %thead
+    %tr
+      %th
+        name
+      %th
+        description
+      %th
+        disabled?
+  %tbody
+    - @feature_controls.each do |feature_control|
+      %tr
+        %td
+          = feature_control.name
+        %td
+          = feature_control.description
+        %td
+          = feature_control.disabled
+
+= link_to 'edit', admin_feature_controls_edit_path

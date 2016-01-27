@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :dashboard
     resources :menus
     resources :features
+
+    get '/feature_controls' => 'feature_controls#index'
+    get '/feature_controls/edit' => 'feature_controls#edit'
+    post '/feature_controls/update_all' => 'feature_controls#update_all'
   end
 
   # You can have the root of your site routed with "root"

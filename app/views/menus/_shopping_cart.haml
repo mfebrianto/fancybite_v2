@@ -4,10 +4,12 @@
       It's not like that ordinary brownies you have had!
     .shopping-cart-header-label
       One-of-a kind homemade Artisan Brownies with a range of various unique flavours you can choose :)
-  -#.shopping-cart-wrapper
-  -#  .shopping-cart-button
-  -#    .shopping-cart-icon
-  -#      %img{src: '/assets/cart.png'}
-  -#    .triangle-right
-  -#    .shopping-cart-amount
-  -#      $ 0.00
+
+  - if customer_buy_active?
+    .shopping-cart-wrapper
+      .shopping-cart-button
+        .shopping-cart-icon
+          %img{src: '/assets/cart.png'}
+        .triangle-right
+        .shopping-cart-amount
+          $ 0.00
