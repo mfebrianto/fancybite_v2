@@ -1,6 +1,9 @@
 Start project : 2016-01-26
-Release Date :
+Release Date : 2016-01-28
 
 Technical improvement :
 1. Rubocop installed
 2. unit test for Menu model
+
+new feature :
+1. live chat
