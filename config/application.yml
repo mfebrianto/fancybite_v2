@@ -1,0 +1,13 @@
+# config/application.yml
+defaults: &defaults
+  instagram:
+    access_token: '183654524.5996a5d.a24c28bcdc604f07915ae19bad50ea58'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

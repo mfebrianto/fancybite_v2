@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 gem 'unicorn', '~> 5.0', '>= 5.0.1'
+gem 'settingslogic', '~> 2.0', '>= 2.0.9'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -39,6 +40,7 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 
 gem 'paperclip', '~> 4.3'
 gem 'mysql2', '~> 0.4.2'
+gem 'httparty', '~> 0.13.7'
 
 
 group :development, :test do

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :dashboard
     resources :menus
     resources :features
+    resources :promos
 
     get '/feature_controls' => 'feature_controls#index'
     get '/feature_controls/edit' => 'feature_controls#edit'

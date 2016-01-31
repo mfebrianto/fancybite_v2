@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160126212344) do
+ActiveRecord::Schema.define(version: 20160131220949) do
 
   create_table "feature_controls", force: :cascade do |t|
     t.string  "name",        limit: 255
@@ -34,6 +34,12 @@ ActiveRecord::Schema.define(version: 20160126212344) do
     t.datetime "picture_small_updated_at"
   end
 
+  create_table "instagram_tag_numbers", force: :cascade do |t|
+    t.integer  "tag_number", limit: 4
+    t.string   "tag",        limit: 255
+    t.datetime "fetch_date"
+  end
+
   create_table "menus", force: :cascade do |t|
     t.string   "name",                 limit: 255
     t.string   "description",          limit: 255
@@ -44,6 +50,13 @@ ActiveRecord::Schema.define(version: 20160126212344) do
     t.datetime "picture_updated_at"
     t.boolean  "portfolio"
     t.boolean  "featured"
+  end
+
+  create_table "promos", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "code",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
