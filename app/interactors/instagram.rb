@@ -17,8 +17,9 @@ class Instagram
   def parse_response(response)
     if response.present? &&
         response['meta']['code'] == 200
-      current_no_of_tag = InstagramTagNumber.find(@instagram_tag)
-      if current_no_of_tag < response['data']['media_count']
+      current_no_of_tag = InstagramTagNumber.where(tag: @instagram_tag).order(:fetch_date).last
+      if current_no_of_tag.nil? ||
+          current_no_of_tag.tag_number < response['data']['media_count']
         InstagramTagNumber.create(tag_number: response['data']['media_count'],
                                   tag: response['data']['name'],
                                   fetch_date: Time.now.to_s)
