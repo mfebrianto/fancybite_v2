@@ -45,6 +45,7 @@ gem 'httparty', '~> 0.13.7'
 gem 'sidekiq', '~> 4.1'
 gem 'sidekiq-scheduler', '~> 2.0', '>= 2.0.4'
 
+gem 'sinatra', :require => nil
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
