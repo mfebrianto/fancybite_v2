@@ -15,6 +15,7 @@ class Instagram
   end
 
   def parse_response(response)
+    Rails.logger.info ">>>>>>>>parse_response"
     if response.present? &&
         response['meta']['code'] == 200
       current_no_of_tag = InstagramTagNumber.where(tag: @instagram_tag).order(:fetch_date).last

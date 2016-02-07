@@ -1,7 +1,5 @@
 check_instagram_tags_number:
-  every:
-    - "3600s"
-    - :first_in: '120s'
-  class: "CheckDaemon"
+  every: "10s"
+  class: "InstagramWorker"
   queue: daemons
   description: "This job will check Daemon every 30 seconds after 120 seconds after start"
