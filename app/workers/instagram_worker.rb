@@ -4,7 +4,7 @@ class InstagramWorker
 
   def perform
     Rails.logger.info 'instagram worker start'
-    AdminNotificationMailer.new_instagram_tag.deliver_now if Instagram.new
+    AdminNotificationMailer.new_instagram_tag.deliver_now if Instagram.new.number
     Rails.logger.info 'instagram worker finish'
   end
 end

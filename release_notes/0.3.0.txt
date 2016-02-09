@@ -3,6 +3,7 @@ Release Date : -
 
 Technical improvement :
 1. install settingslogic
+2. simplecov installed and configured
 
 new feature :
 1. connect to Instagram
