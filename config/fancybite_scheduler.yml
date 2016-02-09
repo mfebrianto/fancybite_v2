@@ -1,5 +1,5 @@
 check_instagram_tags_number:
-  every: "10s"
-  class: "InstagramWorker"
-  queue: daemons
-  description: "This job will check Daemon every 30 seconds after 120 seconds after start"
+  every: '10m'
+  class: 'InstagramWorker'
+  queue: 'high'
+  description: 'This job will instagram tag every 10m'

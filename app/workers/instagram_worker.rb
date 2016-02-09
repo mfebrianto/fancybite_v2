@@ -1,10 +1,10 @@
 class InstagramWorker
   include Sidekiq::Worker
-  sidekiq_options queue: "high"
+  sidekiq_options queue: 'high'
 
   def perform
     Rails.logger.info 'instagram worker start'
-    Instagram.new
+    AdminNotificationMailer.new_instagram_tag.deliver_now if Instagram.new
     Rails.logger.info 'instagram worker finish'
   end
 end
