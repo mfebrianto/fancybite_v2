@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install -y curl patch gawk g++ gcc make libc6-dev patch libreadline6-dev zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config libffi-dev
 
 RUN apt-get update -qq && apt-get install -y build-essential nodejs npm nodejs-legacy mysql-client vim
-RUN apt-get install libmysqlclient-dev
+RUN apt-get --assume-yes install libmysqlclient-dev
 RUN npm install -g phantomjs
 
 RUN mkdir /fancybite
@@ -21,7 +21,6 @@ ADD . /fancybite
 WORKDIR /fancybite
 ADD start.sh start.sh
 RUN chmod +x /fancybite/start.sh
-RUN RAILS_ENV=production bundle exec rake assets:precompile --trace
 
 WORKDIR /fancybite
 

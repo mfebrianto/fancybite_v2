@@ -8,5 +8,6 @@ RAILS_ENV=production rake db:migrate
 RAILS_ENV=production rake db:seed
 RAILS_ENV=production rake assets:precompile
 #bundle exec rake log:clear
-#rails s
-RAILS_ENV=production rails server -p 3000 -b '0.0.0.0'
+
+RAILS_ENV=production bundle exec sidekiq -q high -L log/sidekiq.log &
+RAILS_ENV=production rails server -p 3000 -b '0.0.0.0' # rails s
