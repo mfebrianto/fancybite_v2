@@ -21,8 +21,13 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-
+```bash
+$ cd /var/www/fancybite_v2
+$ git pull --rebase origin master
+# docker-compose stop
+# docker-compose up
+```
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
