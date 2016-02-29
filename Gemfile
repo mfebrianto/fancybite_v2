@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 gem 'unicorn', '~> 5.0', '>= 5.0.1'
+gem 'settingslogic', '~> 2.0', '>= 2.0.9'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -39,7 +40,12 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 
 gem 'paperclip', '~> 4.3'
 gem 'mysql2', '~> 0.4.2'
+gem 'httparty', '~> 0.13.7'
 
+gem 'sidekiq', '~> 4.1'
+gem 'sidekiq-scheduler', '~> 2.0', '>= 2.0.4'
+
+gem 'sinatra', :require => nil
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +54,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'rubocop', '~> 0.36.0'
   gem 'rubocop-rspec', '~> 1.3', '>= 1.3.1'
+  gem 'simplecov', '~> 0.11.1'
 end
 
 group :development do

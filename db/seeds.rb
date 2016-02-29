@@ -6,4 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+FeatureControl.delete_all
 FeatureControl.create(name: 'shop', description: 'this toggle is to allowed customer to buy product', disabled: true)
+
+Promo.delete_all
+Promo.create(id: 1, name: 'instagram tag', code: 'fancybite_oz')

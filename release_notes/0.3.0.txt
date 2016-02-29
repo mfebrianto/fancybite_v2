@@ -1,0 +1,13 @@
+Start project : 2016-02-01
+Release Date : 2016-03-01
+
+Technical improvement :
+1. install settingslogic
+2. simplecov installed and configured
+3. redis docker
+
+new feature :
+1. connect to Instagram
+
+removed :
+1. livechat

@@ -1,3 +1,6 @@
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
+
 Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
     resources :dashboard
     resources :menus
     resources :features
+    resources :promos
 
     get '/feature_controls' => 'feature_controls#index'
     get '/feature_controls/edit' => 'feature_controls#edit'
@@ -18,6 +22,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
+
+  mount Sidekiq::Web => '/sidekiq'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

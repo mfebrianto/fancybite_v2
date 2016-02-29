@@ -22,5 +22,18 @@ module FancybiteV2
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    ActionMailer::Base.smtp_settings = {
+        address:              'mail.messagingengine.com',
+        port:                 587,
+        user_name:            'fancybite@fastmail.com',
+        password:             'MfC221686!',
+        authentication:       :plain,
+        enable_starttls_auto: true,
+        ssl:                  false
+    }
+
+    # ActionMailer::Base.default_options = 'http://www.fancybite.com.au'
+    # Mail.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
   end
 end
