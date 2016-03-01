@@ -6,4 +6,8 @@ class Admin::AdminController < ActionController::Base
   authorize_resource class: false
   # load_resource
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to new_user_session_url
+  end
+
 end
