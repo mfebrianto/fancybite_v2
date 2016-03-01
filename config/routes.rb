@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     post '/feature_controls/update_all' => 'feature_controls#update_all'
   end
 
+  # devise_scope :user do
+  #   get 'sign_in', to: 'sessions#new'
+  # end
+
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
 

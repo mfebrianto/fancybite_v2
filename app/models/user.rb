@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_save :default_values
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,5 +9,9 @@ class User < ActiveRecord::Base
 
   def admin?
     role == ROLES[0]
+  end
+
+  def default_values
+    self.role ||= 'customer'
   end
 end
