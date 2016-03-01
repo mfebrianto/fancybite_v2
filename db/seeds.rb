@@ -6,8 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+class ActiveRecord::Base
+  def self.seed_create(attributes)
+    new(attributes, without_protection: true).save(validate: false)
+  end
+end
+
 FeatureControl.delete_all
-FeatureControl.create(name: 'shop', description: 'this toggle is to allowed customer to buy product', disabled: true)
+FeatureControl.seed_create(id: 1, name: 'shop', description: 'this toggle is to allowed customer to buy product', disabled: true)
 
 Promo.delete_all
-Promo.create(id: 1, name: 'instagram tag', code: 'fancybite_oz')
+Promo.seed_create(id: 1, name: 'instagram tag', code: 'fancybite_oz')

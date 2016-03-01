@@ -1,0 +1,8 @@
+Start project : 2016-03-01
+Release Date : 2016-03-01
+
+Technical improvement :
+1. install rollbar
+
+new feature :
+1. fix issue with db:seed
