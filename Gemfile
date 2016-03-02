@@ -48,6 +48,7 @@ gem 'sidekiq-scheduler', '~> 2.0', '>= 2.0.4'
 gem 'sinatra', :require => nil
 
 gem 'rollbar', '~> 2.7.1'
+gem 'cancan', '~> 1.6', '>= 1.6.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

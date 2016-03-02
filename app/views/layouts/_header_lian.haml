@@ -6,13 +6,13 @@
         %span
       %section.title-area.left
         %h2
-          %a{:href => "#"}
+          %a{href: "#"}
             -#order@fancybite.com.au
-      %a.login.right{:href => '#'}
-        -#login
+      .login.right
+        =render '/layouts/login_link'
   %section.menu-header-container
     .content-wrap
-      %a.logo{:href => "/"}
+      %a.logo{href: "/"}
       %ul.left.hide-for-small.inline-list
         =render '/layouts/side_menu'
 

@@ -2,7 +2,7 @@ require 'sidekiq/web'
 require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     get '/feature_controls/edit' => 'feature_controls#edit'
     post '/feature_controls/update_all' => 'feature_controls#update_all'
   end
+
+  # devise_scope :user do
+  #   get 'sign_in', to: 'sessions#new'
+  # end
 
   # You can have the root of your site routed with "root"
   root 'dashboard#index'

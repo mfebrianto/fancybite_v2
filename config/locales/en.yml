@@ -23,3 +23,9 @@ en:
   hello: "Hello world"
   home: Home
   menu: Menu
+  session :
+    login: Login
+    logout: Logout
+  dashboard:
+    hi: "Hi %{name}"
+
