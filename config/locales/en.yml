@@ -27,5 +27,5 @@ en:
     login: Login
     logout: Logout
   dashboard:
-    hi: Hi
+    hi: "Hi %{name}"
 
