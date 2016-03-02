@@ -18,4 +18,6 @@
 
   .row
     .menu-show-button
+      - if customer_buy_active?
+        = link_to 'Add to cart', '', class: 'button'
       = link_to 'Back', menus_path, class: 'button'
