@@ -16,6 +16,7 @@
 //= require jquery.bxslider.min
 //= require features
 //= require awesome_products
+//= require_tree ./shop
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
