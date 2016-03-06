@@ -24,34 +24,19 @@
 
   <body>
 
-  <%if customer_buy_active? %>
-      <%= render '/shopping_baskets/header' %>
-  <%end%>
 
     <div class="off-canvas-wrap" data-offcanvas>
-      <%if customer_buy_active? %>
-          <div class="inner-wrap margin-top-inner-wrap">
-            <%= render '/layouts/header_lian' %>
-            <!--start of the page content-->
-            <div class="content-wrap">
-              <%= yield %>
-            </div>
-            <%= render '/layouts/before_footer' %>
-            <!--end of the page content-->
-            <%= render '/layouts/footer' %>
-          </div>
-       <%else%>
-          <div class="inner-wrap">
-            <%= render '/layouts/header_lian' %>
-            <!--start of the page content-->
-            <div class="content-wrap">
-              <%= yield %>
-            </div>
-            <%= render '/layouts/before_footer' %>
-            <!--end of the page content-->
-            <%= render '/layouts/footer' %>
-          </div>
-       <%end%>
+      <div class="inner-wrap">
+        <%= render '/layouts/header_lian' %>
+        <%= render '/layouts/shopping_basket' %>
+        <!--start of the page content-->
+        <div class="content-wrap">
+          <%= yield %>
+        </div>
+        <%= render '/layouts/before_footer' %>
+        <!--end of the page content-->
+        <%= render '/layouts/footer' %>
+      </div>
     </div>
   </body>
 </html>

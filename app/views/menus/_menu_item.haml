@@ -10,6 +10,9 @@
       .menu-description
         %p
           = food.description
+        - if customer_buy_active?
+          %p.more
+            = link_to 'more', menu_path(food.id)
       %h2.menu-price
         = "$#{food.price}"
 

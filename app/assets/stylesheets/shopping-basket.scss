@@ -1,0 +1,14 @@
+.shopping-basket {
+  position: fixed;
+  width: 100px;
+  background-color: pink;
+  z-index: 2000;
+  right: 0;
+  top: 28%;
+  height: 100px;
+
+  .icon{
+    background-image: url('/assets/cart');
+    z-index: 2001;
+  }
+}
