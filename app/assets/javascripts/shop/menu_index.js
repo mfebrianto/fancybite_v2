@@ -5,7 +5,9 @@ shop.menu_index = {
     addToCart: function() {
         $('.add-to-cart').click(function(e){
             e.preventDefault();
-            shop.shopping_cart.addItem();
+            var menu_id = $(this).data("id")
+            shop.shopping_cart.addItem(menu_id);
+
         })
     }
 }

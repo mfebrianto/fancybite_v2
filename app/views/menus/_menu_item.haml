@@ -17,6 +17,6 @@
         = "$#{food.price}"
 
       - if customer_buy_active?
-        = link_to 'Add to cart', '#', class: 'button add-to-cart'
+        = link_to 'Add to cart', '#', class: 'button add-to-cart', 'data-id' => food.id
       - else
         = link_to 'Detail', menu_path(food.id), class: 'button'

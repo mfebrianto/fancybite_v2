@@ -1,9 +1,19 @@
 shop.shopping_cart = {
-    addItem: function(){
-        console.log('item added');
-        // call backend to add item to database
-        // if success return total
-        // set the total in the view
+    addItem: function(menuId){
+        console.log('item added'+menuId);
+        $.ajax({
+            type: "POST",
+            url: '/baskets',
+            beforeSend: shop.common.loadLoadingOverlay(),
+            data: {id: menuId},
+            success: this.itemAddedSuccess()
+        });
+    },
+    itemAddedSuccess: function(){
+        this.refreshItemNumber();
+    },
+    refreshItemNumber: function(){
+
     }
 }
 

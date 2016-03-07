@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :menus
   resources :dashboard
+  resources :baskets
 
   namespace :admin do
     resources :dashboard

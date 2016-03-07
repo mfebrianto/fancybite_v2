@@ -1,4 +1,5 @@
 var shop = {
     shopping_cart: '',
-    menu_index: ''
+    menu_index: '',
+    common: ''
 }
