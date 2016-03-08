@@ -1,7 +1,7 @@
 fancybite.shop.menu_index = {
     init: function() {
         this.addToCart();
-        fancybite.shop.shopping_cart.refreshItemNumber();
+        fancybite.shop.shopping_cart.init();
     },
     addToCart: function() {
         $('.add-to-cart').click(function(e){

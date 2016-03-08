@@ -5,7 +5,7 @@ class BasketsController < ApplicationController
                                menu_id: params['id']}
     basket_interactor_param.merge!(user_id: current_user.id) if current_user.present?
     BasketInteractor.new(basket_interactor_param).create_or_update
-    render json: {message: 'we have put the brownie that you want to shopping basket'}.to_json, status: :ok
+    render json: {message: 'please check your shopping basket'}.to_json, status: :ok
   end
 
   def index

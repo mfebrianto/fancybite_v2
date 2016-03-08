@@ -1,4 +1,8 @@
 fancybite.shop.shopping_cart = {
+    init: function(){
+        this.clickShoppingcart();
+        this.refreshItemNumber();
+    },
     addItem: function(menuId){
         $.ajax({
             type: 'POST',
@@ -26,6 +30,12 @@ fancybite.shop.shopping_cart = {
     },
     updateShoppingCartItemNumber: function(itemNumber){
         $('#shopping-cart-item-number').text(itemNumber)
+    },
+    clickShoppingcart: function(){
+        $('.shopping-basket').click(function(){
+            fancybite.shop.shopping_list.show();
+        });
     }
+
 }
 
