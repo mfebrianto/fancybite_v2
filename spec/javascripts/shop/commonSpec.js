@@ -1,6 +1,7 @@
 describe('common', function(){
     it('should show overlay', function(){
-        spyOn($('#loading-overlay'), 'show')
-        expect($('#loading-overlay').show()).toHaveBeenCalled();
+        //var spyEvent = spyOnEvent('#loading-overlay', 'show');
+        shop.common.loadLoadingOverlay();
+        expect('#loading-overlay').toBeVisible();
     })
 })
