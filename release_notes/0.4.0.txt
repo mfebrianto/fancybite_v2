@@ -3,6 +3,7 @@ Release Date : -
 
 Technical improvement :
 1. put cancan gem
+2. jasmine installed
 
 new feature :
 1. save basket

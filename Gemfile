@@ -58,6 +58,7 @@ group :development, :test do
   gem 'rubocop', '~> 0.36.0'
   gem 'rubocop-rspec', '~> 1.3', '>= 1.3.1'
   gem 'simplecov', '~> 0.11.1'
+  gem 'jasmine', '~> 2.4'
 end
 
 group :development do
