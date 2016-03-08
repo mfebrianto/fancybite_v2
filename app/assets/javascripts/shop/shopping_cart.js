@@ -1,12 +1,13 @@
 shop.shopping_cart = {
     addItem: function(menuId){
-        console.log('item added'+menuId);
         $.ajax({
-            type: "POST",
+            type: 'POST',
             url: '/baskets',
             beforeSend: shop.common.loadLoadingOverlay(),
             data: {id: menuId},
-            success: this.itemAddedSuccess()
+            success: function(){
+                shop.shopping_cart.itemAddedSuccess();
+            }
         });
     },
     itemAddedSuccess: function(){
@@ -14,7 +15,16 @@ shop.shopping_cart = {
         this.refreshItemNumber();
     },
     refreshItemNumber: function(){
-
+        $.ajax({
+            type: 'GET',
+            url: '/baskets',
+            success: function(data){
+                shop.shopping_cart.updateShoppingCartItemNumber(data.total_items)
+            }
+        });
+    },
+    updateShoppingCartItemNumber: function(itemNumber){
+        $('#shopping-cart-item-number').text(itemNumber)
     }
 }
 

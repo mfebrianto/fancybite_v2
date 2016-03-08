@@ -1,6 +1,7 @@
 shop.menu_index = {
     init: function() {
         this.addToCart();
+        shop.shopping_cart.refreshItemNumber();
     },
     addToCart: function() {
         $('.add-to-cart').click(function(e){

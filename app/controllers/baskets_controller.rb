@@ -8,4 +8,8 @@ class BasketsController < ApplicationController
     render nothing: true, status: :ok
   end
 
+  def index
+    render json: BasketInteractor.new(session_id: request.session_options[:id]).detail
+  end
+
 end
