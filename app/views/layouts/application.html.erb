@@ -29,7 +29,9 @@
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
         <%= render '/layouts/header_lian' %>
-        <%= render '/layouts/shopping_basket' %>
+        <%if customer_buy_active?%>
+            <%= render '/layouts/shopping_basket' %>
+        <%end%>
         <!--start of the page content-->
         <div class="content-wrap">
           <%= yield %>

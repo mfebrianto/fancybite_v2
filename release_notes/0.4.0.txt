@@ -6,4 +6,5 @@ Technical improvement :
 2. jasmine installed
 
 new feature :
-1. save basket
+1. save shopping basket based on session id
+2. shopping basket side menu
