@@ -10,6 +10,7 @@ shop.shopping_cart = {
         });
     },
     itemAddedSuccess: function(){
+        shop.common.closeLoadingOverlay()
         this.refreshItemNumber();
     },
     refreshItemNumber: function(){

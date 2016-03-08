@@ -4,5 +4,8 @@ shop.common = {
     },
     loadLoadingOverlay: function(){
         $('#loading-overlay').show();
+    },
+    closeLoadingOverlay: function(){
+        $('#loading-overlay').hide();
     }
 }
