@@ -20,6 +20,6 @@
  *= require jquery.bxslider
  *= require features
  *= require awesome_products
- *= require shopping-basket-header
+ *= require notification.scss
  *= require overlay
  */

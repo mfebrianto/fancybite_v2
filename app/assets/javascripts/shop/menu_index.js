@@ -1,13 +1,13 @@
-shop.menu_index = {
+fancybite.shop.menu_index = {
     init: function() {
         this.addToCart();
-        shop.shopping_cart.refreshItemNumber();
+        fancybite.shop.shopping_cart.refreshItemNumber();
     },
     addToCart: function() {
         $('.add-to-cart').click(function(e){
             e.preventDefault();
             var menu_id = $(this).data("id")
-            shop.shopping_cart.addItem(menu_id);
+            fancybite.shop.shopping_cart.addItem(menu_id);
 
         })
     }

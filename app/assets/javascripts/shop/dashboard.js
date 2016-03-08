@@ -1,5 +1,5 @@
-shop.dashboard = {
+fancybite.shop.dashboard = {
     init: function() {
-        shop.shopping_cart.refreshItemNumber();
+        fancybite.shop.shopping_cart.refreshItemNumber();
     }
 }

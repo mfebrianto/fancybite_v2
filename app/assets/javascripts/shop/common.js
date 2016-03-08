@@ -1,4 +1,4 @@
-shop.common = {
+fancybite.shop.common = {
     loadModal: function(){
         $('#myModal').foundation('reveal', 'open');
     },

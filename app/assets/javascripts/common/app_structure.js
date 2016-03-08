@@ -1,0 +1,3 @@
+fancybite.common = {
+    notification: ''
+}

@@ -1,17 +1,18 @@
-shop.shopping_cart = {
+fancybite.shop.shopping_cart = {
     addItem: function(menuId){
         $.ajax({
             type: 'POST',
             url: '/baskets',
-            beforeSend: shop.common.loadLoadingOverlay(),
+            beforeSend: fancybite.shop.common.loadLoadingOverlay(),
             data: {id: menuId},
-            success: function(){
-                shop.shopping_cart.itemAddedSuccess();
+            success: function(data){
+                fancybite.shop.shopping_cart.itemAddedSuccess(data.message);
             }
         });
     },
-    itemAddedSuccess: function(){
-        shop.common.closeLoadingOverlay()
+    itemAddedSuccess: function(message){
+        fancybite.shop.common.closeLoadingOverlay();
+        fancybite.common.notification.show(message);
         this.refreshItemNumber();
     },
     refreshItemNumber: function(){
@@ -19,7 +20,7 @@ shop.shopping_cart = {
             type: 'GET',
             url: '/baskets',
             success: function(data){
-                shop.shopping_cart.updateShoppingCartItemNumber(data.total_items)
+                fancybite.shop.shopping_cart.updateShoppingCartItemNumber(data.total_items)
             }
         });
     },

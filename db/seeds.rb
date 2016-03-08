@@ -13,7 +13,7 @@ class ActiveRecord::Base
 end
 
 FeatureControl.delete_all
-FeatureControl.seed_create(id: 1, name: 'shop', description: 'this toggle is to allowed customer to buy product', disabled: true)
+FeatureControl.seed_create(id: 1, name: 'shop', description: 'this toggle is to allowed customer to buy product', disabled: false)
 FeatureControl.seed_create(id: 2, name: 'login', description: 'this toggle is to allowed customer to check their order status and history', disabled: true)
 
 Promo.delete_all
