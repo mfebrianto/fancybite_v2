@@ -1,13 +1,12 @@
 .shopping-list{
-  background-color: lightpink;
-  opacity: 0.9;
+  background-color: pink;
   width: 200px;
   height: 500px;
   position: fixed;
   z-index: 2000;
-  display: none;
   top: 100px;
   right: 0;
+  margin-right: -200px;
   border-radius: 10px 0 0 10px;
   box-shadow: 10px 10px 10px;
 }

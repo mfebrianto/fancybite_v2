@@ -32,13 +32,11 @@ fancybite.shop.shopping_cart = {
         $('#shopping-cart-item-number').text(itemNumber)
     },
     animateShoppingListToLeft: function(){
-        console.log('test left');
         $('.shopping-basket').animate({
             marginRight:  '200px'
         }, 1000);
     },
     animateShoppingListToRight: function(){
-        console.log('test right');
         $('.shopping-basket').animate({
             marginRight: '0px'
         }, 1000);
@@ -48,8 +46,10 @@ fancybite.shop.shopping_cart = {
         $shoppingBasket.click(function(){
             if (parseInt($shoppingBasket.css('margin-right')) < 200){
                 fancybite.shop.shopping_cart.animateShoppingListToLeft();
+                fancybite.shop.shopping_list.show();
             }else{
                 fancybite.shop.shopping_cart.animateShoppingListToRight();
+                fancybite.shop.shopping_list.hide();
             }
 
         });
