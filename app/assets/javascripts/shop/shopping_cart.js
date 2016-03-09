@@ -31,11 +31,30 @@ fancybite.shop.shopping_cart = {
     updateShoppingCartItemNumber: function(itemNumber){
         $('#shopping-cart-item-number').text(itemNumber)
     },
+    animateShoppingListToLeft: function(){
+        console.log('test left');
+        $('.shopping-basket').animate({
+            marginRight:  '200px'
+        }, 1000);
+    },
+    animateShoppingListToRight: function(){
+        console.log('test right');
+        $('.shopping-basket').animate({
+            marginRight: '0px'
+        }, 1000);
+    },
     clickShoppingcart: function(){
-        $('.shopping-basket').click(function(){
-            fancybite.shop.shopping_list.show();
+        var $shoppingBasket = $('.shopping-basket');
+        $shoppingBasket.click(function(){
+            if (parseInt($shoppingBasket.css('margin-right')) < 200){
+                fancybite.shop.shopping_cart.animateShoppingListToLeft();
+            }else{
+                fancybite.shop.shopping_cart.animateShoppingListToRight();
+            }
+
         });
     }
+
 
 }
 
