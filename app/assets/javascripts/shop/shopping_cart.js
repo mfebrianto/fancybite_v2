@@ -24,7 +24,8 @@ fancybite.shop.shopping_cart = {
             type: 'GET',
             url: '/baskets',
             success: function(data){
-                fancybite.shop.shopping_cart.updateShoppingCartItemNumber(data.total_items)
+                fancybite.shop.shopping_cart.updateShoppingCartItemNumber(data.total_items);
+                fancybite.shop.shopping_list.updateShoppingListDetail(data);
             }
         });
     },
@@ -33,7 +34,7 @@ fancybite.shop.shopping_cart = {
     },
     animateShoppingListToLeft: function(){
         $('.shopping-basket').animate({
-            marginRight:  '200px'
+            marginRight:  '220px'
         }, 1000);
     },
     animateShoppingListToRight: function(){
