@@ -12,25 +12,39 @@ fancybite.shop.shopping_list = {
     updateShoppingListDetail: function(data){
         $('#shopping-list-content').html(
             this.dataToHtmlTable(data)
+        );
+
+        $('.shopping-list-total').html(
+            this.totalToHtmlTable(data)
         )
+    },
+    totalToHtmlTable: function(data){
+        return 'Total $'+this.totalItems(data.items);
     },
     dataToHtmlTable: function(data){
         return this.tableTemplate(data.items);
     },
+    totalItems: function(items){
+        var totalItems = 0;
+        $.each(items, function(index, item){
+            var subtotal = item.number_of_item * item.price;
+            totalItems += subtotal;
+        });
+        return totalItems;
+    },
     tableTemplate: function(items){
-        console.log('>>>>>>>>');
-        console.log(items);
         var htmlContent='';
-        $.each(items, function(){
-            //TODO: need to pass in price per item in JSON file
+        $.each(items, function(index, item){
+            var subtotal = item.number_of_item * item.price;
+            htmlContent += fancybite.shop.shopping_list.tableRowTemplate(item.name, item.number_of_item, subtotal);
         });
         return htmlContent;
     },
-    tableRowTemplate: function(menu, qty, subtotal){
-        return '<tr>' +
-            '<td>menu</td>' +
-            '<td>qty</td>' +
-            '<td>subtotal</td>' +
+    tableRowTemplate: function(name, qty, subtotal){
+        return '<tr class="tranparent-row">' +
+            '<td>'+name+'</td>' +
+            '<td>'+qty+'</td>' +
+            '<td>'+subtotal+'</td>' +
         '</tr>'
     }
 

@@ -31,7 +31,7 @@ class BasketInteractor
   def basket_detail_json
     basket_json(basket.basket_items.map{|bi| bi.number_of_item}.sum,
                 0,
-                @basket.basket_items)
+                @basket.basket_items_with_item_price)
   end
 
   def empty_basket_json
