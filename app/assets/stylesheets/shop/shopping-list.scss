@@ -44,12 +44,21 @@
   }
 
   .shopping-list-qty{
-    width: 20px;
+    width: 15px;
   }
 
   .shopping-list-subtotal{
-    width: 20px;
+    width: 15px;
   }
+
+  .shopping-list-remove-item{
+    width: 15px;
+    height: 15px;
+    background-image: url('/assets/shopping-list/remove');
+    background-size: cover;
+  }
+
+
 
   thead{
     color: white;
@@ -59,13 +68,10 @@
   td{
     color: white;
     font-size: 12px;
+    padding: 5px;
   }
 }
 
 .tranparent-row{
   background: transparent !important;
 }
-
-//table tr.even{
-//
-//}

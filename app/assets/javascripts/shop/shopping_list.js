@@ -14,6 +14,9 @@ fancybite.shop.shopping_list = {
             this.dataToHtmlTable(data)
         );
 
+        this.readyRemoveItem();
+
+
         $('.shopping-list-total').html(
             this.totalToHtmlTable(data)
         )
@@ -36,16 +39,35 @@ fancybite.shop.shopping_list = {
         var htmlContent='';
         $.each(items, function(index, item){
             var subtotal = item.number_of_item * item.price;
-            htmlContent += fancybite.shop.shopping_list.tableRowTemplate(item.name, item.number_of_item, subtotal);
+            htmlContent += fancybite.shop.shopping_list.tableRowTemplate(item.id, item.name, item.number_of_item, subtotal);
         });
         return htmlContent;
     },
-    tableRowTemplate: function(name, qty, subtotal){
+    tableRowTemplate: function(id, name, qty, subtotal){
         return '<tr class="tranparent-row">' +
             '<td>'+name+'</td>' +
             '<td>'+qty+'</td>' +
             '<td>'+subtotal+'</td>' +
+            '<td><div data-id='+id+' class="shopping-list-remove-item"></div></td>' +
         '</tr>'
+    },
+    readyRemoveItem: function(){
+        $('.shopping-list-remove-item').click(function(e){
+            fancybite.shop.shopping_list.removeItem(e);
+        });
+    },
+    removeItem: function(e){
+        e.preventDefault();
+        var id = $(e.target).data('id');
+
+        $.ajax({
+            type: 'DELETE',
+            url: '/baskets',
+            success: function(data){
+                fancybite.shop.shopping_cart.updateShoppingCartItemNumber(data.total_items);
+                fancybite.shop.shopping_list.updateShoppingListDetail(data);
+            }
+        });
     }
 
 }

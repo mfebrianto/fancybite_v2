@@ -1,5 +1,5 @@
 Start project : 2016-03-01
-Release Date : -
+Release Date : 2016-03-13
 
 Technical improvement :
 1. put cancan gem
@@ -8,3 +8,5 @@ Technical improvement :
 new feature :
 1. save shopping basket based on session id
 2. shopping basket side menu
+3. add item to shopping basket
+4. remove item from shopping basket
