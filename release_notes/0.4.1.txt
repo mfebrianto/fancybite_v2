@@ -1,0 +1,7 @@
+hotfix : 2016-03-14
+
+Technical improvement :
+-
+
+fix :
+1. make sure shopping cart and remove icons in place

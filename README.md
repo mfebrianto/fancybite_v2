@@ -24,8 +24,12 @@ Things you may want to cover:
 ```bash
 $ cd /var/www/fancybite_v2
 $ git pull --rebase origin master
-# docker-compose stop
-# docker-compose up
+$ git log (to make sure you have the latest code)
+```
+
+```bash
+# docker-compose stop (in fancybite_v2 dir)
+# docker-compose up (in fancybite_v2 dir)
 ```
 
 Please feel free to use a different markup language if you do not plan to run

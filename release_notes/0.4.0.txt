@@ -1,5 +1,5 @@
 Start project : 2016-03-01
-Release Date : 2016-03-13
+Release Date : 2016-03-14
 
 Technical improvement :
 1. put cancan gem
