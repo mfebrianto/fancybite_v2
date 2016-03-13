@@ -1,0 +1,38 @@
+.shopping-basket {
+  position: fixed;
+  width: 35px;
+  background-color: pink;
+  z-index: 2000;
+  right: 0;
+  margin-left: 0px;
+  top: 28%;
+  height: 100px;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 10px 10px 10px #888888;
+
+  .icon{
+    background-image: url('/assets/cart');
+    background-size: cover;
+    width: 80%;
+    height: 20%;
+    right: 0;
+    margin-left: 5px;
+    margin-top: 15px;
+  }
+
+  hr {
+    color: white;
+    width: 75%;
+    height: 5px;
+    margin-left: 5px;
+  }
+
+  .item-number {
+    h2{
+      color: white;
+    }
+    margin-left: 9px;
+    margin-top: -12px;
+
+  }
+}

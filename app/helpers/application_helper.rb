@@ -10,8 +10,4 @@ module ApplicationHelper
   def login_active?
     !FeatureControl.find(LOGIN).disabled?
   end
-
-  def show_login_link?
-    login_active? && !current_user.present?
-  end
 end

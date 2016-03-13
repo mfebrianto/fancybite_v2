@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302013716) do
+ActiveRecord::Schema.define(version: 20160308090908) do
+
+  create_table "basket_items", force: :cascade do |t|
+    t.string   "basket_id",      limit: 255
+    t.string   "menu_id",        limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "number_of_item", limit: 4,   default: 1
+  end
+
+  create_table "baskets", force: :cascade do |t|
+    t.string   "user_id",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "session_id", limit: 255
+  end
 
   create_table "feature_controls", force: :cascade do |t|
     t.string  "name",        limit: 255

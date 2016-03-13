@@ -23,12 +23,17 @@
   </head>
 
   <body>
+    <%= render '/layouts/overlay' %>
+    <%= render '/layouts/modal' %>
+    <%= render '/layouts/notification' %>
 
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
-
         <%= render '/layouts/header_lian' %>
-        <%= render '/layouts/menu_header' %>
+        <%if customer_buy_active?%>
+            <%= render '/layouts/shopping_basket' %>
+            <%= render '/shopping_lists/side_index' %>
+        <%end%>
         <!--start of the page content-->
         <div class="content-wrap">
           <%= yield %>

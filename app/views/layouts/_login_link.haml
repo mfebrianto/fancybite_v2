@@ -1,7 +1,7 @@
-- if show_login_link?
-  = link_to t('session.login'), new_user_session_path
-
-- if !show_login_link?
-  = t('dashboard.hi', name: current_user.full_name)
-  |
-  = link_to t('session.logout'), destroy_user_session_path, method: :delete
+- if login_active?
+  - if !current_user.present?
+    = link_to t('session.login'), new_user_session_path
+  - else
+    = t('dashboard.hi', name: current_user.full_name)
+    |
+    = link_to t('session.logout'), destroy_user_session_path, method: :delete

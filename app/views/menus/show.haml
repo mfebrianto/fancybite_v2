@@ -18,4 +18,11 @@
 
   .row
     .menu-show-button
+      - if customer_buy_active?
+        = link_to 'Add to cart', '', class: 'button add-to-cart', 'data-id' => @food.id
       = link_to 'Back', menus_path, class: 'button'
+
+:javascript
+    $(document).ready( function() {
+      fancybite.shop.menu_show.init();
+    });

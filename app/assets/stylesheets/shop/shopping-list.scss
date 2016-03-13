@@ -1,0 +1,77 @@
+.shopping-list{
+  background-color: pink;
+  width: 220px;
+  height: 500px;
+  position: fixed;
+  z-index: 2000;
+  top: 100px;
+  right: 0;
+  margin-right: -220px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 10px 10px 10px;
+}
+
+.shopping-list-total{
+  padding-left: 10px;
+  font-size: 16px;
+  color: white;
+  font-family: Philosopher;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.shopping-list-header{
+  text-align: center;
+
+  h1{
+    font-size: 16px;
+    color: white;
+    font-family: Philosopher;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+  }
+}
+
+.shopping-list-table{
+
+  border: 0px;
+  background-color: transparent;
+
+  .shopping-list-name{
+    width: 180px;
+  }
+
+  .shopping-list-qty{
+    width: 15px;
+  }
+
+  .shopping-list-subtotal{
+    width: 15px;
+  }
+
+  .shopping-list-remove-item{
+    width: 15px;
+    height: 15px;
+    background-image: url('/assets/shopping-list/remove');
+    background-size: cover;
+  }
+
+
+
+  thead{
+    color: white;
+    background-color: transparent;
+  }
+
+  td{
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+.tranparent-row{
+  background: transparent !important;
+}
