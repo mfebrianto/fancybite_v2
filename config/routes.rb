@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :menus
   resources :dashboard
   resources :baskets
-  resources :basket_items, only: [:destroy]
+  resources :basket_items
   resources :shopping_lists
 
   namespace :admin do

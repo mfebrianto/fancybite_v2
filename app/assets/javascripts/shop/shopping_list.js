@@ -62,7 +62,7 @@ fancybite.shop.shopping_list = {
 
         $.ajax({
             type: 'DELETE',
-            url: '/baskets',
+            url: '/basket_items/'+id,
             success: function(data){
                 fancybite.shop.shopping_cart.updateShoppingCartItemNumber(data.total_items);
                 fancybite.shop.shopping_list.updateShoppingListDetail(data);

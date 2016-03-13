@@ -11,5 +11,4 @@ class BasketsController < ApplicationController
   def index
     render json: BasketInteractor.new(session_id: request.session_options[:id]).detail
   end
-
 end
