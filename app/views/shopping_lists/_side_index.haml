@@ -4,5 +4,10 @@
       Your shopping basket
   = render partial: 'shopping_lists/items'
 
-  .shopping-list-total
-    Total $12
+  .row
+    .shopping-list-total.small-6.columns
+      Total $12
+    - if checkout_active?
+      .small-6.columns
+        .button.tiny.centre-text-align
+          =t('dashboard.checkout.checkout_button')

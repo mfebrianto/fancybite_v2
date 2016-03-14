@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :baskets
   resources :basket_items
   resources :shopping_lists
+  resources :checkout
 
   namespace :admin do
     resources :dashboard

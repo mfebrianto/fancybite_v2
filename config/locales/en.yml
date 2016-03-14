@@ -28,4 +28,6 @@ en:
     logout: Logout
   dashboard:
     hi: "Hi %{name}"
+    checkout:
+      checkout_button: Checkout
 
