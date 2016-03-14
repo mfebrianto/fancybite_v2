@@ -15,7 +15,7 @@ end
 FeatureControl.delete_all
 FeatureControl.seed_create(id: 1, name: 'shop', description: 'this toggle is to allowed customer to buy product', disabled: false)
 FeatureControl.seed_create(id: 2, name: 'login', description: 'this toggle is to allowed customer to check their order status and history', disabled: true)
-FeatureControl.seed_create(id: 3, name: 'checkout', description: 'this toggle is to allowed customer to finalise their order', disabled: false)
+FeatureControl.seed_create(id: 3, name: 'checkout', description: 'this toggle is to allowed customer to finalise their order', disabled: true)
 
 Promo.delete_all
 Promo.seed_create(id: 1, name: 'instagram tag', code: 'fancybite_oz')

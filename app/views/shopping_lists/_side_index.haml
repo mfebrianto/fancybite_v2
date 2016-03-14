@@ -10,4 +10,4 @@
     - if checkout_active?
       .small-6.columns
         .button.tiny.centre-text-align
-          =t('dashboard.checkout.checkout_button')
+          = link_to t('dashboard.checkout.checkout_button'), new_checkout_path, class: 'text-colour-white'
