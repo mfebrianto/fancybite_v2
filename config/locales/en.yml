@@ -28,4 +28,5 @@ en:
     logout: Logout
   dashboard:
     hi: "Hi %{name}"
+    this_week_flavours: This week flavours
 

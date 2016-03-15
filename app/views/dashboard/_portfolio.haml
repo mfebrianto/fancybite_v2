@@ -1,4 +1,9 @@
 .row
+  .small-12.columns
+    #ribbon
+      %span.content
+        = t('dashboard.this_week_flavours')
+.row
   - @portfolio_products.each do |portfolio|
-    .medium-4.columns
+    .medium-3.columns
       = render '/dashboard/portfolio_menu', product: portfolio
