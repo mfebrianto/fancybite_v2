@@ -1,24 +1,25 @@
-.text-centre
-  your detail
+#customer_detail
+  .text-centre
+    your detail
 
-= form_tag('/checkout', method: :post) do
-  = label_tag 'given_name'
-  = text_field_tag 'given_name'
+  = form_tag('/checkout', method: :post, id: 'customer_detail_form') do
+    = label_tag 'given_name'
+    = text_field_tag 'given_name'
 
-  = label_tag 'sure_name'
-  = text_field_tag 'sure_name'
+    = label_tag 'sure_name'
+    = text_field_tag 'sure_name'
 
-  = label_tag 'email'
-  = text_field_tag 'email'
+    = label_tag 'email'
+    = text_field_tag 'email'
 
-  = label_tag 'address'
-  = text_field_tag 'address'
+    = label_tag 'address'
+    = text_field_tag 'address'
 
-  = label_tag 'suburb'
-  = text_field_tag 'suburb'
+    = label_tag 'suburb'
+    = text_field_tag 'suburb'
 
-  = label_tag 'city'
-  = text_field_tag 'city'
+    = label_tag 'city'
+    = text_field_tag 'city'
 
-  = label_tag 'postcode'
-  = text_field_tag 'postcode'
+    = label_tag 'postcode'
+    = text_field_tag 'postcode'

@@ -25,6 +25,7 @@ gem 'devise'
 
 gem 'unicorn', '~> 5.0', '>= 5.0.1'
 gem 'settingslogic', '~> 2.0', '>= 2.0.9'
+gem 'braintree', '~> 2.58'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,0 +1,9 @@
+Start project : 2016-03-15
+Release Date : -
+
+Technical improvement :
+1. put braintree gem
+
+new feature :
+1. checkout form
+2. payment form
