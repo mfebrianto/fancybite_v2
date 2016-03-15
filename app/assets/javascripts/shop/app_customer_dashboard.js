@@ -3,5 +3,6 @@ fancybite.shop = {
     menu_index: '',
     common: '',
     dashboard: '',
-    shopping_list: ''
+    shopping_list: '',
+    checkout: ''
 }

@@ -1,2 +1,22 @@
-%p
-  this is checkout page
+.row
+  .small-12.columns
+    .text-centre.margin-bottom.margin-top
+      Please finalise your detail and payment
+.row
+  .medium-6.columns
+    = render partial: 'customer_detail'
+  .medium-6.columns
+    .text-centre
+      your payment
+
+.row
+  .small-12.columns
+    .text-centre
+      .button
+        Submit
+
+
+:javascript
+  $(document).ready( function() {
+    fancybite.shop.checkout.init();
+  });
