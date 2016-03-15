@@ -1,0 +1,7 @@
+hotfix : 2016-03-16
+
+Technical improvement :
+1. put ssl certificate in place
+
+fix :
+-
