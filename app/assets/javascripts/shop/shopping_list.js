@@ -9,6 +9,9 @@ fancybite.shop.shopping_list = {
             marginRight:  '-220px'
         }, 1000);
     },
+    hideCheckoutButton: function(){
+        $('#checkout-button').hide();
+    },
     updateShoppingListDetail: function(data){
         $('#shopping-list-content').html(
             this.dataToHtmlTable(data)
