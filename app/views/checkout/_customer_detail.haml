@@ -2,24 +2,54 @@
   .text-centre.checkout-header
     your detail
 
-  = form_tag('/checkout', method: :post, id: 'customer_detail_form') do
-    = label_tag 'given_name'
-    = text_field_tag 'given_name'
+  = form_tag('/checkout', method: :post, id: 'customer_detail_form', data: { abide: '' }, novalidate: 'novalidate') do
+    .checkout-input
+      = label_tag 'given_name' do
+        Given Name
+        = text_field_tag 'given_name', nil, required: true
+      %small.error
+        given name is required
 
-    = label_tag 'sure_name'
-    = text_field_tag 'sure_name'
+    .checkout-input
+      = label_tag 'sure_name' do
+        Sure Name
+        = text_field_tag 'sure_name', nil, required: true
+      %small.error
+        sure name is required
 
-    = label_tag 'email'
-    = text_field_tag 'email'
+    .checkout-input
+      = label_tag 'email' do
+        Email
+        = text_field_tag 'email', nil, required: true
+      %small.error
+        email is required
 
-    = label_tag 'address'
-    = text_field_tag 'address'
+    .checkout-input
+      = label_tag 'address' do
+        address
+        = text_field_tag 'address', nil, required: true
+      %small.error
+        address is required
 
-    = label_tag 'suburb'
-    = text_field_tag 'suburb'
+    .checkout-input
+      = label_tag 'suburb' do
+        suburb
+        = text_field_tag 'suburb', nil, required: true
+      %small.error
+        suburb is required
 
-    = label_tag 'city'
-    = text_field_tag 'city'
+    .checkout-input
+      = label_tag 'city' do
+        city
+        = text_field_tag 'city', nil, required: true
+      %small.error
+        city is required
 
-    = label_tag 'postcode'
-    = text_field_tag 'postcode'
+    .checkout-input
+      = label_tag 'postcode' do
+        postcode
+        = text_field_tag 'postcode', nil, required: true
+      %small.error
+        postcode is required
+
+    = submit_tag 'submit'

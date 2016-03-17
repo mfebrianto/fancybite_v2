@@ -1,6 +1,25 @@
-.checkout-header
-  we do not save credit card information and transaction is protected by SSL
+-#.small-12.columns
+-#  .checkout-header
+-#    we do not save credit card information and transaction is protected by SSL
+
+.small-12.columns
+  .centre-text-align.checkout-header
+    Payment
 
 .small-12.columns
   Your order total is $12, please check the detail in the
   =link_to 'shopping cart', '#', id: 'shopping-cart-link'
+
+.small-12.columns
+  = radio_button_tag 'cod', '0'
+  = label_tag 'Cash on Delivery'
+  -#paypal
+    -# soon
+  -#credit card
+    -# soon
+  -#.small-12.columns
+  -#  You need to confirm your email address for this payment method
+
+.small-12.columns
+  .payment-header.centre-text-align
+    Delivery
