@@ -6,13 +6,19 @@
   .centre-text-align.checkout-header
     Payment
 
-.small-12.columns
+.small-12.columns.checkout-block
   Your order total is $12, please check the detail in the
   =link_to 'shopping cart', '#', id: 'shopping-cart-link'
 
-.small-12.columns
-  = radio_button_tag 'cod', '0'
-  = label_tag 'Cash on Delivery'
+.small-12.columns.checkout-block
+  Payment Method
+  .checkout-block-sub
+    = radio_button_tag 'cod', '0'
+    = label_tag 'Cash on Delivery'
+  .checkout-block-sub
+    .checkout-highlight
+      You need to verify your email to purchase using this method.
+      Why not become a member and get free stuff instead ?
   -#paypal
     -# soon
   -#credit card
