@@ -32,6 +32,14 @@ $ git log (to make sure you have the latest code)
 # docker-compose up (in fancybite_v2 dir)
 ```
 
+* nginx configuration
+
+do not forget to combine certificates to one otherwise the browser will show invalid certificate warning
+
+```bash
+# cat c757e1b472264e0d.crt gd_bundle-g2-g1.crt > fancybite.com.au.crt
+```
+
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
 

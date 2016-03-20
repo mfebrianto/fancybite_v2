@@ -7,8 +7,8 @@
     Payment
 
 .small-12.columns.checkout-block
-  Your order total is $12, please check the detail in the
-  =link_to 'shopping cart', '#', id: 'shopping-cart-link'
+  = "Your order total is $#{@basket_total_amount}, please check the detail in the"
+  = link_to 'shopping cart', '#', id: 'shopping-cart-link'
 
 .small-12.columns.checkout-block
   Payment Method

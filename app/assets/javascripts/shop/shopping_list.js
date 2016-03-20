@@ -12,6 +12,9 @@ fancybite.shop.shopping_list = {
     hideCheckoutButton: function(){
         $('#checkout-button').hide();
     },
+    hideDeleteButton: function(){
+        $('.shopping-list-remove-item').hide();
+    },
     updateShoppingListDetail: function(data){
         $('#shopping-list-content').html(
             this.dataToHtmlTable(data)

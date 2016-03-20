@@ -6,8 +6,7 @@
 
   .row
     .shopping-list-total.small-6.columns
-      Total $12
-    - if checkout_active?
+      = "Total $#{@basket_total_amount}"
+    - if checkout_active? && @show_checkout_button
       .small-6.columns
-        .button.tiny.centre-text-align#checkout-button
-          = link_to t('dashboard.checkout.checkout_button'), new_checkout_path, class: 'text-colour-white'
+        = link_to t('dashboard.checkout.checkout_button'), new_checkout_path, class: 'text-colour-white button tiny centre-text-align', id: 'checkout-button'

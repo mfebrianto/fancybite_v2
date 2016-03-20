@@ -9,3 +9,15 @@
         sub
       %td
     %tbody#shopping-list-content
+    - if @basket_items.present?
+      - @basket_items.each do |item|
+        %tr.tranparent-row
+          %td
+            = item['name']
+          %td
+            = item['number_of_item']
+          %td
+            = "$#{item['price'] * item['number_of_item']}"
+          %td
+            - if @show_remove_item_button
+              .shopping-list-remove-item{'data-id' => item['id']}

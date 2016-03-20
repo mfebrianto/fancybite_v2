@@ -2,10 +2,12 @@ class MenusController < ApplicationController
 
   def index
     @foods_array_of_3 = convert_array_to_dimension(Menu.all, 3)
+    @show_checkout_button = true
   end
 
   def show
     @food = Menu.find(params[:id])
+    @show_checkout_button = true
   end
 
   private
