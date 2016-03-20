@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :menus
     resources :features
     resources :promos
+    resources :delivery_coverage
 
     get '/feature_controls' => 'feature_controls#index'
     get '/feature_controls/edit' => 'feature_controls#edit'

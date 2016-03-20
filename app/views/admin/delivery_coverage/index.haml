@@ -1,0 +1,24 @@
+%h1
+  This is delivery coverage page
+
+.row
+  %thead
+    %td
+      postcode
+    %td
+      suburb
+    %td
+      drop point
+    %td
+  %tbody#shopping-list-content
+  - @delivery_coverages.each do |cov|
+    %tr
+      %td
+        = cov.postcode
+      %td
+        = cov.suburb
+      %td
+        = cov.drop_point
+      %td
+
+= link_to 'new', new_admin_delivery_coverage_path

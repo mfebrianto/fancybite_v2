@@ -1,0 +1,14 @@
+.row
+  = form_for :delivery_coverage, url: admin_delivery_coverage_index_path do |f|
+    .small-12.columns
+      = f.label :postcode do
+        Postcode
+        = f.text_field :postcode, required: true
+
+    .small-12.columns
+      = f.label :drop_point do
+        Drop point
+        = f.text_field :drop_point
+
+    .small-12.columns
+      = f.submit
