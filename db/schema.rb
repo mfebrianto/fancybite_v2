@@ -51,9 +51,10 @@ ActiveRecord::Schema.define(version: 20160320214214) do
   end
 
   create_table "delivery_coverages", force: :cascade do |t|
-    t.string   "postcode",   limit: 255
-    t.string   "suburb",     limit: 255
-    t.string   "drop_point", limit: 255
+    t.string   "postcode",           limit: 255
+    t.string   "suburb",             limit: 255
+    t.string   "drop_point",         limit: 255
+    t.boolean  "minimum_order_flag",             default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

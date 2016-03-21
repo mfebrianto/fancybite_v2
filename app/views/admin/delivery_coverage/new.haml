@@ -11,4 +11,9 @@
         = f.text_field :drop_point
 
     .small-12.columns
+      = f.label :minimum_order_flag do
+        has minimum order?
+        = f.check_box :minimum_order_flag
+
+    .small-12.columns
       = f.submit

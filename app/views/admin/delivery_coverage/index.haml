@@ -2,23 +2,30 @@
   This is delivery coverage page
 
 .row
-  %thead
-    %td
-      postcode
-    %td
-      suburb
-    %td
-      drop point
-    %td
-  %tbody#shopping-list-content
-  - @delivery_coverages.each do |cov|
-    %tr
+  %table
+    %thead
       %td
-        = cov.postcode
+        postcode
       %td
-        = cov.suburb
+        suburb
       %td
-        = cov.drop_point
+        drop point
       %td
+        minimum order
+      %td
+    %tbody#shopping-list-content
+    - @delivery_coverages.each do |cov|
+      %tr
+        %td
+          = cov.postcode
+        %td
+          = cov.suburb
+        %td
+          = cov.drop_point
+        %td
+          = cov.minimum_order_flag
+        %td
+          = form_for :cov, url: admin_delivery_coverage_path(cov.id), method: :delete do |f|
+            = f.submit 'delete'
 
 = link_to 'new', new_admin_delivery_coverage_path
