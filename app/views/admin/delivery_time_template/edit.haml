@@ -20,14 +20,14 @@
           %td
             = delivery.day
           %td
-            = hidden_field_tag "delivery_time_template[morning][#{delivery.id}]", ''
-            = check_box_tag "delivery_time_template[morning][#{delivery.id}]", delivery.morning, delivery.morning
+            = hidden_field_tag "delivery_time_template[#{delivery.id}][morning]", ''
+            = check_box_tag "delivery_time_template[#{delivery.id}][morning]", delivery.morning, delivery.morning
           %td
-            = hidden_field_tag "delivery_time_template[afternoon][#{delivery.id}]", ''
-            = check_box_tag "delivery_time_template[afternoon][#{delivery.id}]", delivery.afternoon, delivery.afternoon
+            = hidden_field_tag "delivery_time_template[#{delivery.id}][afternoon]", ''
+            = check_box_tag "delivery_time_template[#{delivery.id}][afternoon]", delivery.afternoon, delivery.afternoon
           %td
-            = hidden_field_tag "delivery_time_template[evening][#{delivery.id}]", ''
-            = check_box_tag "delivery_time_template[evening][#{delivery.id}]", delivery.evening, delivery.evening
+            = hidden_field_tag "delivery_time_template[#{delivery.id}][evening]", ''
+            = check_box_tag "delivery_time_template[#{delivery.id}][evening]", delivery.evening, delivery.evening
 
   = submit_tag 'save'
   = link_to 'cancel', admin_delivery_time_template_path
