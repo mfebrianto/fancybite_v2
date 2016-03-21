@@ -20,6 +20,11 @@ Rails.application.routes.draw do
     resources :promos
     resources :delivery_coverage
 
+
+    get '/delivery_time_schedule' => 'delivery_time_schedule#index'
+    get '/delivery_time_schedule/edit' => 'delivery_time_schedule#edit'
+    post '/delivery_time_schedule/update_all' => 'delivery_time_schedule#update_all'
+
     get '/delivery_time_template' => 'delivery_time_template#index'
     get '/delivery_time_template/edit' => 'delivery_time_template#edit'
     post '/delivery_time_template/update_all' => 'delivery_time_template#update_all'

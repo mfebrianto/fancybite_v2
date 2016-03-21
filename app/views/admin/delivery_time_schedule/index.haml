@@ -1,0 +1,26 @@
+%h1
+  Delivery Time Schedule
+-#%table
+-#  %thead
+-#    %tr
+-#      %th
+-#        day
+-#      %th
+-#        morning delivery?
+-#      %th
+-#        afternoon delivery?
+-#      %th
+-#        evening delivery?
+-#  %tbody
+-#    - @delivery_time_templates.each do |delivery|
+-#      %tr
+-#        %td
+-#          = delivery.day
+-#        %td
+-#          = delivery.morning
+-#        %td
+-#          = delivery.afternoon
+-#        %td
+-#          = delivery.evening
+-#
+-#= link_to 'edit', admin_delivery_time_template_edit_path

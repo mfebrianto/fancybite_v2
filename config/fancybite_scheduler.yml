@@ -3,3 +3,9 @@ check_instagram_tags_number:
   class: 'InstagramWorker'
   queue: 'high'
   description: 'This job will instagram tag every 10m'
+
+check_delivery_time:
+  every: '24h'
+  class: 'DeliveryTimeWorker'
+  queue: 'high'
+  description: 'This job will check whether this week delivery schedule has been set or not'
