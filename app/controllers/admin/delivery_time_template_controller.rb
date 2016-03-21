@@ -4,4 +4,12 @@ class Admin::DeliveryTimeTemplateController < Admin::AdminController
     @delivery_time_templates = DeliveryTimeTemplate.all
   end
 
+  def edit
+    @delivery_time_templates = DeliveryTimeTemplate.all
+  end
+
+  def update_all
+
+  end
+
 end

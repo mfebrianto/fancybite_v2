@@ -19,7 +19,10 @@ Rails.application.routes.draw do
     resources :features
     resources :promos
     resources :delivery_coverage
-    resources :delivery_time_template
+
+    get '/delivery_time_template' => 'delivery_time_template#index'
+    get '/delivery_time_template/edit' => 'delivery_time_template#edit'
+    post '/delivery_time_template/update_all' => 'delivery_time_template#update_all'
 
     get '/feature_controls' => 'feature_controls#index'
     get '/feature_controls/edit' => 'feature_controls#edit'

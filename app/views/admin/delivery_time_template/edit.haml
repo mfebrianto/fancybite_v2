@@ -1,0 +1,33 @@
+%h1
+  Edit Delivery Time Template
+
+= form_tag(admin_delivery_time_template_update_all_path, method: :post) do
+
+  %table
+    %thead
+      %tr
+        %th
+          day
+        %th
+          morning delivery?
+        %th
+          afternoon delivery?
+        %th
+          evening delivery?
+    %tbody
+      - @delivery_time_templates.each do |delivery|
+        %tr
+          %td
+            = delivery.day
+          %td
+            = hidden_field_tag "delivery_time_template[morning][#{delivery.id}]", ''
+            = check_box_tag "delivery_time_template[morning][#{delivery.id}]", delivery.morning, delivery.morning
+          %td
+            = hidden_field_tag "delivery_time_template[afternoon][#{delivery.id}]", ''
+            = check_box_tag "delivery_time_template[afternoon][#{delivery.id}]", delivery.afternoon, delivery.afternoon
+          %td
+            = hidden_field_tag "delivery_time_template[evening][#{delivery.id}]", ''
+            = check_box_tag "delivery_time_template[evening][#{delivery.id}]", delivery.evening, delivery.evening
+
+  = submit_tag 'save'
+  = link_to 'cancel', admin_delivery_time_template_path
