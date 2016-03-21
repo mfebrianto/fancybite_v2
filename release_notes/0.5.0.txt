@@ -7,3 +7,5 @@ Technical improvement :
 new feature :
 1. checkout form
 2. payment form
+3. admin - delivery area
+4. schedule - delivery area

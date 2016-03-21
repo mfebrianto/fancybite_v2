@@ -1,0 +1,24 @@
+%h1
+  Delivery Time Template
+%table
+  %thead
+    %tr
+      %th
+        day
+      %th
+        morning delivery?
+      %th
+        afternoon delivery?
+      %th
+        evening delivery?
+  %tbody
+    - @delivery_time_templates.each do |delivery|
+      %tr
+        %td
+          = delivery.day
+        %td
+          = delivery.morning
+        %td
+          = delivery.afternoon
+        %td
+          = delivery.evening

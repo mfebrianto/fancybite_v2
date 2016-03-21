@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320214214) do
+ActiveRecord::Schema.define(version: 20160321070933) do
 
   create_table "basket_items", force: :cascade do |t|
     t.string   "basket_id",      limit: 255
@@ -57,6 +57,23 @@ ActiveRecord::Schema.define(version: 20160320214214) do
     t.boolean  "minimum_order_flag",             default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "delivery_time_schedules", force: :cascade do |t|
+    t.datetime "schedule_date"
+    t.boolean  "morning"
+    t.string   "morning_postcode",   limit: 255
+    t.boolean  "afternoon"
+    t.string   "afternoon_postcode", limit: 255
+    t.boolean  "evening"
+    t.string   "evening_postcode",   limit: 255
+  end
+
+  create_table "delivery_time_templates", force: :cascade do |t|
+    t.string  "day",       limit: 255
+    t.boolean "morning"
+    t.boolean "afternoon"
+    t.boolean "evening"
   end
 
   create_table "feature_controls", force: :cascade do |t|

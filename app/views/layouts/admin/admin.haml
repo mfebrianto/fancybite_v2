@@ -6,6 +6,8 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    %p
+
+    %row
+      = link_to 'dashboard', admin_dashboard_index_path
 
     = yield
