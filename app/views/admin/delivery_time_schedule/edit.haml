@@ -1,0 +1,32 @@
+%h1
+  Edit Delivery Time Schedule
+
+= form_tag(admin_delivery_time_schedule_update_all_path, method: :post) do
+  %table
+    %thead
+      %tr
+        %th
+          day
+        %th
+          morning delivery?
+        %th
+          afternoon delivery?
+        %th
+          evening delivery?
+    %tbody
+      - @delivery_time_schedules.each do |delivery|
+        %tr
+          %td
+            = delivery.schedule_date
+          %td
+            = hidden_field_tag "delivery_time_schedule[#{delivery.id}][morning]", ''
+            = check_box_tag "delivery_time_schedule[#{delivery.id}][morning]", delivery.morning, delivery.morning
+          %td
+            = hidden_field_tag "delivery_time_schedule[#{delivery.id}][afternoon]", ''
+            = check_box_tag "delivery_time_schedule[#{delivery.id}][afternoon]", delivery.afternoon, delivery.afternoon
+          %td
+            = hidden_field_tag "delivery_time_schedule[#{delivery.id}][evening]", ''
+            = check_box_tag "delivery_time_schedule[#{delivery.id}][evening]", delivery.evening, delivery.evening
+
+  = submit_tag 'save'
+  = link_to 'cancel', admin_delivery_time_schedule_path
