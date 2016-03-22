@@ -1,0 +1,16 @@
+.checkout-block-sub
+  .small-3.columns
+    Monday
+  .small-9.columns
+    = select_tag 'date', "<option>1</option><option>2</option><option>3</option><option>4</option>".html_safe
+
+.checkout-block-sub
+  .medium-4.columns
+    = radio_button_tag 'Morning', 'Morning', class: 'box_radio'
+    = label_tag 'Morning'
+  .medium-4.columns
+    = radio_button_tag 'Afternoon', 'Afternoon', class: 'box_radio'
+    = label_tag 'Afternoon'
+  .medium-4.columns
+    = radio_button_tag 'Evening', 'Evening', class: 'box_radio'
+    = label_tag 'Evening'
