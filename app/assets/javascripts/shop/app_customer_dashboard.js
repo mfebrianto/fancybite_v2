@@ -4,5 +4,6 @@ fancybite.shop = {
     common: '',
     dashboard: '',
     shopping_list: '',
-    checkout: ''
+    checkout: '',
+    checkout_schedule: ''
 }

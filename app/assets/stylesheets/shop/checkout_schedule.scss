@@ -1,0 +1,14 @@
+.div-radio-button{
+  font-size: 12px;
+  padding: 0;
+  line-height: 40px;
+  background: mediumaquamarine;
+
+  input[type=radio]{
+    display: none;
+  }
+}
+
+.active{
+  background: pink !important;
+}

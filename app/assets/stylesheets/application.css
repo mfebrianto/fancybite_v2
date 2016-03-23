@@ -22,6 +22,5 @@
  *= require awesome_products
  *= require notification.scss
  *= require overlay
- *= require_tree ./components
  *= require_tree ./shop
  */

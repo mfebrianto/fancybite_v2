@@ -1,6 +1,7 @@
 fancybite.shop.checkout = {
     init: function(){
         fancybite.shop.shopping_cart.clickShoppingcart(),
+        fancybite.shop.checkout_schedule.init();
         this.checkShoppingCart(),
         this.submission()
     },
