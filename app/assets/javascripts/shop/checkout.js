@@ -12,19 +12,40 @@ fancybite.shop.checkout = {
       });
     },
     submission: function(){
-        $('#checkout-submit-button').click(function(){
+        $('#checkout-submit-button').click(function(e){
+            e.preventDefault();
             console.log('submit-button clicked');
 
-            $('#customer_detail_form').submit();
-
-            //$.ajax({
-            //    type: 'POST',
-            //    url: '/checkout',
-            //    data: $('#customer_detail_form').serialize(),
-            //    success: function(){
-            //        console.log('success');
-            //    }
-            //});
+            $.ajax({
+                type: 'POST',
+                url: '/customers',
+                data: $('#customer_detail_form').serialize(),
+                success: function(){
+                    console.log('success');
+                    fancybite.shop.checkout.submitPayment();
+                }
+            });
         })
+    },
+    submitPayment: function(){
+        $.ajax({
+            type: 'POST',
+            url: '/payments',
+            data: $('#payment_detail_form').serialize(),
+            success: function(){
+                console.log('success');
+                fancybite.shop.checkout.submitDelivery();
+            }
+        });
+    },
+    submitDelivery: function(){
+        $.ajax({
+            type: 'POST',
+            url: '/checkout',
+            data: $('#checkout_detail_form').serialize(),
+            success: function(){
+                console.log('success');
+            }
+        });
     }
 }

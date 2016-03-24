@@ -9,6 +9,29 @@
   }
 }
 
+.div-radio-button-group{
+
+  div{
+    border: solid;
+    border-width: 1px;
+    border-color: #FFFFFF;
+  }
+
+  :first-child{
+    border: solid;
+    border-width: 1px;
+    border-color: #FFFFFF;
+  }
+
+  :last-child{
+    border: solid;
+    border-width: 1px;
+    border-color: #FFFFFF;
+  }
+
+
+}
+
 .active{
-  background: pink !important;
+  background: aquamarine !important;
 }
