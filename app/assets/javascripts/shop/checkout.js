@@ -11,20 +11,35 @@ fancybite.shop.checkout = {
           $('.shopping-basket').click();
       });
     },
+    IsCustomerDataFormValid: function(){
+        var status = true;
+
+        $('#customer_detail_form :input').each(function(){
+            Foundation.libs.abide.validate($(this),{type: ''});
+        });
+
+        $('.error').each(function(){
+            status = $(this).is(":visible");
+            return !status;
+        });
+
+        return !status;
+    },
     submission: function(){
         $('#checkout-submit-button').click(function(e){
             e.preventDefault();
-            console.log('submit-button clicked');
 
-            $.ajax({
-                type: 'POST',
-                url: '/customers',
-                data: $('#customer_detail_form').serialize(),
-                success: function(){
-                    console.log('success');
-                    fancybite.shop.checkout.submitPayment();
-                }
-            });
+            if (fancybite.shop.checkout.IsCustomerDataFormValid()){
+                $.ajax({
+                    type: 'POST',
+                    url: '/customers',
+                    data: $('#customer_detail_form').serialize(),
+                    success: function(){
+                        console.log('success');
+                        fancybite.shop.checkout.submitPayment();
+                    }
+                });
+            }
         })
     },
     submitPayment: function(){
