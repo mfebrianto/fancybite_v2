@@ -11,6 +11,11 @@ fancybite.shop.checkout = {
           $('.shopping-basket').click();
       });
     },
+    goToFirstError: function(){
+        $('html, body').animate({
+            scrollTop: ($('.error:visible').first().offset().top)
+        },500);
+    },
     IsCustomerDataFormValid: function(){
         var status = true;
 
@@ -39,6 +44,8 @@ fancybite.shop.checkout = {
                         fancybite.shop.checkout.submitPayment();
                     }
                 });
+            } else{
+                fancybite.shop.checkout.goToFirstError();
             }
         })
     },
