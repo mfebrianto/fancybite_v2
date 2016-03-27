@@ -48,6 +48,6 @@
     .checkout-input
       = label_tag 'postcode' do
         postcode
-        = text_field_tag 'postcode', nil, required: true
+        = text_field_tag 'postcode', nil, required: true, pattern: 'postcode_aus'
       %small.error
-        required
+        please put in a valid postcode

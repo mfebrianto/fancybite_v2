@@ -3,7 +3,39 @@ fancybite.shop.checkout = {
         fancybite.shop.shopping_cart.clickShoppingcart(),
         fancybite.shop.checkout_schedule.init();
         this.checkShoppingCart(),
-        this.submission()
+        this.submission(),
+        this.checkPostcode()
+    },
+    checkPostcode: function(){
+      $('#postcode').change(function(){
+          var postcode = $('#postcode').val();
+          if(postcode.length == 4){
+              fancybite.shop.checkout.isPostcodeOnCoverage(postcode)
+          }
+      });
+    },
+    isPostcodeOnCoverage: function(postcode){
+        $.ajax({
+            type: 'GET',
+            url: '/delivery_coverage/'+postcode,
+            statusCode: {
+                200: function(){
+                    fancybite.shop.checkout.insideCoverageArea();
+                },
+                404: function(){
+                    fancybite.shop.checkout.outsideCoverageArea();
+                }
+            }
+        });
+    },
+    insideCoverageArea: function(){
+        fancybite.common.notification.hide();
+        $('#date').attr('disabled', false);
+    },
+    outsideCoverageArea: function(){
+        var message = 'Sorry your address is outside our coverage area. You can submit the order without make a payment. We will contact you through email to process your order.';
+        fancybite.common.notification.show_forever(message);
+        $('#date').attr('disabled', true);
     },
     checkShoppingCart: function(){
       $('#shopping-cart-link').click(function(e){
