@@ -1,25 +1,33 @@
 class DeliveryTimeTemplateInteractor
 
   def self.create_delivery_schedule
-    today = Date.today
-    days_from_this_week = (today.at_beginning_of_week..today.at_end_of_week).map.each { |day| day }
-
-    days_from_this_week.each do |day|
-      DeliveryTimeSchedule.find_by_schedule_date(day).delete
-    end
-
-    delivery_time_template = DeliveryTimeTemplate.all
-
-    index = 0
-    delivery_time_template.each do |delivery|
-      schedule = { schedule_date: days_from_this_week[index],
-                   morning: delivery.morning,
-                   afternoon: delivery.afternoon,
-                   evening: delivery.evening
+    not_exist_days.each do |date|
+      template = DeliveryTimeTemplate.find_by_day(date.strftime("%A").downcase)
+      schedule = { schedule_date: date,
+                   morning: template.morning,
+                   afternoon: template.afternoon,
+                   evening: template.evening
       }
       DeliveryTimeSchedule.create(schedule)
-      index+=1
     end
+  end
+
+  def self.not_exist_days
+    not_exist = []
+    seven_days_ahead.each do |date|
+      not_exist << date unless DeliveryTimeSchedule.find_by_schedule_date(date)
+    end
+    not_exist
+  end
+
+  def self.seven_days_ahead
+    next_week_dates = []
+    tomorrow = Date.today
+    7.times do
+      tomorrow = tomorrow + 1
+      next_week_dates << tomorrow
+    end
+    next_week_dates
   end
 
 end
