@@ -5,15 +5,19 @@ fancybite.shop.checkout_schedule = {
     buttonsReadyOnClick: function(){
         $('.div-radio-button').click(function(e){
             e.preventDefault();
-            var $activeElement = $('.div-radio-button-group>div.active');
-            $activeElement.removeClass('active');
-
-            $('.input-div-radio-button').removeAttr('checked');
-            console.log('clicked');
-
-            var $element = $(e.target);
-            $element.addClass('active');
-            $element.children().attr('checked',true);
+            if (!$(e.target).is('.disabled')){
+                fancybite.shop.checkout_schedule.buttonAction(e);
+            }
         });
+    },
+    buttonAction: function(e){
+        var $activeElement = $('.div-radio-button-group>div.active');
+        $activeElement.removeClass('active');
+
+        $('.input-div-radio-button').removeAttr('checked');
+
+        var $element = $(e.target);
+        $element.addClass('active');
+        $element.children().attr('checked',true);
     }
 }

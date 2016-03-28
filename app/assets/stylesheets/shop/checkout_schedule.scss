@@ -17,6 +17,11 @@
     border-color: #FFFFFF;
   }
 
+  .disabled{
+    background-color: darkgrey;
+    color: #d3d3d3;
+  }
+
   :first-child{
     border: solid;
     border-width: 1px;
