@@ -19,5 +19,11 @@ fancybite.shop.checkout_schedule = {
         var $element = $(e.target);
         $element.addClass('active');
         $element.children().attr('checked',true);
+    },
+    disableCheckoutScheduleOptions: function(){
+        var $activeElement = $('.div-radio-button-group>div.disabled');
+        $activeElement.removeClass('disabled');
+
+        $('#evening-delivery').addClass('disabled');
     }
 }
