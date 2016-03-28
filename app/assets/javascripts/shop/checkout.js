@@ -22,8 +22,9 @@ fancybite.shop.checkout = {
                 200: function(){
                     fancybite.shop.checkout.insideCoverageArea();
                 },
-                404: function(){
-                    fancybite.shop.checkout.outsideCoverageArea();
+                404: function(data){
+                    console.log(data.responseText)
+                    fancybite.shop.checkout.outsideCoverageArea(data.responseText);
                 }
             }
         });
@@ -32,8 +33,8 @@ fancybite.shop.checkout = {
         fancybite.common.notification.hide();
         $('#date').attr('disabled', false);
     },
-    outsideCoverageArea: function(){
-        var message = 'Sorry your address is outside our coverage area. You can submit the order without make a payment. We will contact you through email to process your order.';
+    outsideCoverageArea: function(message){
+        console.log(message)
         fancybite.common.notification.show_forever(message);
         $('#date').attr('disabled', true);
     },

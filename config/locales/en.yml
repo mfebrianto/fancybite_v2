@@ -30,4 +30,6 @@ en:
     hi: "Hi %{name}"
     checkout:
       checkout_button: Checkout
+      coverage_nsw_only: Sorry our delivery coverage is NSW only for now
+      address_outside_coverage: Sorry your address is outside our coverage area. You can submit the order without make a payment. We will contact you through email to process your order.
 
