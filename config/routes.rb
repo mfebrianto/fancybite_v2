@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :payments
   resources :delivery_coverage
+  resources :delivery_time_schedule
 
   namespace :admin do
     resources :dashboard

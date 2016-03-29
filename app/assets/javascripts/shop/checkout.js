@@ -4,14 +4,7 @@ fancybite.shop.checkout = {
         fancybite.shop.checkout_schedule.init();
         this.checkShoppingCart(),
         this.submission(),
-        this.checkPostcode(),
-        this.changeDeliveryDate()
-    },
-    changeDeliveryDate: function(){
-        $('#date').change(function(){
-            console.log('change delivery date');
-            fancybite.shop.checkout_schedule.disableCheckoutScheduleOptions();
-        });
+        this.checkPostcode()
     },
     checkPostcode: function(){
       $('#postcode').change(function(){
