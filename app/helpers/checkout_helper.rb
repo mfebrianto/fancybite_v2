@@ -9,4 +9,12 @@ module CheckoutHelper
     available_days
   end
 
+  def first_delivery_time
+    DeliveryTimeSchedule.find(delivery_dates.last[1])
+  end
+
+  def class_shown(delivery_status)
+    delivery_status ? '' : 'disabled'
+  end
+
 end

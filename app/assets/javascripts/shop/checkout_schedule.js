@@ -5,23 +5,30 @@ fancybite.shop.checkout_schedule = {
     },
     changeDeliveryDate: function(){
         $('#date').change(function(){
-            //fancybite.shop.checkout_schedule.disableCheckoutScheduleOptions();
-            fancybite.shop.checkout_schedule.getAvailableDeliveryTime(this.value);
+            var schedule = fancybite.shop.checkout_schedule.getAvailableDeliveryTime(this.value);
+            fancybite.shop.checkout_schedule.disableCheckoutScheduleOptions(schedule);
+            // TODO: need to move the active class too
         });
     },
     getAvailableDeliveryTime: function(id){
+        var result;
         $.ajax({
             type: 'GET',
             url: '/delivery_time_schedule/'+id,
+            async: false,
             statusCode: {
-                200: function(){
-                    console.log('found');
+                200: function(data){
+                    result = {morning: data.morning,
+                              afternoon: data.afternoon,
+                              evening: data.evening};
                 },
                 404: function(){
-                    console.log('not found')
+                    console.log('delivery_time_schedule not found');
+                    return 0;
                 }
             }
         });
+        return result;
     },
     buttonsReadyOnClick: function(){
         $('.div-radio-button').click(function(e){
@@ -41,10 +48,18 @@ fancybite.shop.checkout_schedule = {
         $element.addClass('active');
         $element.children().attr('checked',true);
     },
-    disableCheckoutScheduleOptions: function(){
+    disableCheckoutScheduleOptions: function(schedule){
         var $activeElement = $('.div-radio-button-group>div.disabled');
         $activeElement.removeClass('disabled');
 
-        $('#evening-delivery').addClass('disabled');
+        if(schedule.morning){
+            $('#morning-delivery').addClass('disabled');
+        }
+        else if(schedule.afternoon){
+            $('#afternoon-delivery').addClass('disabled');
+        }
+        else if(schedule.evening){
+            $('#evening-delivery').addClass('disabled');
+        }
     }
 }
