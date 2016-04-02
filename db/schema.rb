@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308090908) do
+ActiveRecord::Schema.define(version: 20160402121117) do
 
   create_table "basket_items", force: :cascade do |t|
     t.string   "basket_id",      limit: 255
@@ -26,6 +26,69 @@ ActiveRecord::Schema.define(version: 20160308090908) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "session_id", limit: 255
+  end
+
+  create_table "checkouts", force: :cascade do |t|
+    t.string   "shopping_cart_id", limit: 255
+    t.string   "customer_id",      limit: 255
+    t.string   "user_id",          limit: 255
+    t.string   "payment_id",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "delivery_date"
+    t.string   "delivery_time",    limit: 255
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "given_name",   limit: 255
+    t.string   "sure_name",    limit: 255
+    t.string   "phone_number", limit: 255
+    t.string   "email",        limit: 255
+    t.string   "address",      limit: 255
+    t.string   "suburb",       limit: 255
+    t.string   "city",         limit: 255
+    t.string   "postcode",     limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "delivery_coverages", force: :cascade do |t|
+    t.string   "postcode",           limit: 255
+    t.string   "suburb",             limit: 255
+    t.string   "drop_point",         limit: 255
+    t.boolean  "minimum_order_flag",             default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "delivery_time_schedules", force: :cascade do |t|
+    t.datetime "schedule_date"
+    t.boolean  "morning"
+    t.string   "morning_postcode",   limit: 255
+    t.boolean  "afternoon"
+    t.string   "afternoon_postcode", limit: 255
+    t.boolean  "evening"
+    t.string   "evening_postcode",   limit: 255
+  end
+
+  create_table "delivery_time_templates", force: :cascade do |t|
+    t.string  "day",       limit: 255
+    t.boolean "morning"
+    t.boolean "afternoon"
+    t.boolean "evening"
+  end
+
+  create_table "facebook_users", force: :cascade do |t|
+    t.boolean  "expires"
+    t.decimal  "expires_at",             precision: 10
+    t.string   "token",      limit: 255
+    t.string   "email",      limit: 255
+    t.string   "image",      limit: 255
+    t.string   "name",       limit: 255
+    t.string   "uid",        limit: 255
+    t.string   "user_id",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "feature_controls", force: :cascade do |t|
@@ -74,6 +137,23 @@ ActiveRecord::Schema.define(version: 20160308090908) do
     t.datetime "updated_at"
   end
 
+  create_table "social_images", force: :cascade do |t|
+    t.string   "social_id",            limit: 255
+    t.string   "name",                 limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name",    limit: 255
+    t.string   "picture_content_type", limit: 255
+    t.integer  "picture_file_size",    limit: 4
+    t.datetime "picture_updated_at"
+  end
+
+  create_table "socials", force: :cascade do |t|
+    t.string   "description", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -90,6 +170,8 @@ ActiveRecord::Schema.define(version: 20160308090908) do
     t.string   "role",                   limit: 255
     t.string   "given_name",             limit: 255
     t.string   "sure_name",              limit: 255
+    t.string   "provider",               limit: 255
+    t.string   "uid",                    limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
