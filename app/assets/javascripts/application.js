@@ -19,6 +19,7 @@
 //= require app_structure
 //= require_tree ./common
 //= require_tree ./shop
+//= require_tree ./admin
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

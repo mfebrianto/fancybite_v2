@@ -1,0 +1,3 @@
+= form_tag('/admin/social_images', method: :post, id: 'social_image_form',multipart: true) do
+  = file_field_tag 'file', :accept => 'image/jpeg', :multiple => true
+  = button_tag 'upload', id: 'upload_social_photo'

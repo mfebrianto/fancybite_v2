@@ -1,0 +1,3 @@
+fancybite.admin = {
+    social: ''
+}
