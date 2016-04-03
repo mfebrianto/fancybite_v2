@@ -1,0 +1,26 @@
+.row
+  %h1
+    this is where you put new fb upload
+.row
+  = form_for @social, url: admin_socials_path ,method: :post do |f|
+    .small-12.columns
+      = f.label :description
+      = f.text_area :description, class: 'facebook_description'
+    .small-12.columns
+      = file_field_tag 'file', :accept => 'image/jpeg', :multiple => true
+      = button_tag 'upload'
+    .small-12.columns
+      %table
+        %thead
+          %td
+            name
+          %td
+            preview
+        %tbody
+          %tr
+            %td
+              name
+            %td
+              preview
+    .small-12.columns
+      = f.submit

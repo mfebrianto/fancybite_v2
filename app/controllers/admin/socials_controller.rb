@@ -4,4 +4,8 @@ class Admin::SocialsController < Admin::AdminController
 
   end
 
+  def new
+    @social = Social.new
+  end
+
 end
