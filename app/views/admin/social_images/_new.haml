@@ -1,3 +1,8 @@
-= form_tag('/admin/social_images', method: :post, id: 'social_image_form',multipart: true) do
-  = file_field_tag 'file', :accept => 'image/jpeg', :multiple => true
-  = button_tag 'upload', id: 'upload_social_photo'
+#new-social-image-wrapper
+  = form_tag('/admin/social_images', method: :post, id: 'social_image_form',multipart: true) do
+    = hidden_field_tag 'social_id', @social_id
+    = file_field_tag 'picture', :accept => 'image/jpeg', :multiple => true
+    = button_tag 'upload', id: 'upload_social_photo'
+
+  .small-12.columns
+    = render partial: 'admin/social_images/index'
