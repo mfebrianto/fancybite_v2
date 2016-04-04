@@ -5,7 +5,7 @@ class Admin::SocialImagesController < Admin::AdminController
 
     social.social_images.build(picture: params[:picture])
     if social.save
-      @social_id = social.id
+      @social = social
       show_all
       render partial: 'admin/social_images/new'
     end

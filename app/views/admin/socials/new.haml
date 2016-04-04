@@ -8,6 +8,6 @@
       = f.text_area :description, class: 'facebook_description'
 
   .small-12.columns
-    = render partial: 'admin/social_images/new'
+    = render partial: 'admin/social_images/new', locals: {social: @social}
   .small-12.columns
     = submit_tag 'submit'

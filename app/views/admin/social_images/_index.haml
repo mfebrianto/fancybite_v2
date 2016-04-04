@@ -6,8 +6,9 @@
       %td
         preview
     %tbody
-      %tr
-        %td
-          name
-        %td
-          preview
+      - social.social_images.each do |image|
+        %tr
+          %td
+            = image.name || image.picture_file_name
+          %td
+            %img{src: image.picture.url(:original)}
