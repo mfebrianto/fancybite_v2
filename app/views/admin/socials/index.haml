@@ -10,6 +10,7 @@
         description
       %td
       %td
+      %td
     %tbody
       - @socials.each do |social|
         %tr
@@ -19,6 +20,8 @@
             = social.description
           %td
             = link_to 'edit', edit_admin_social_path(social.id)
+          %td
+            = link_to 'delete', admin_social_path(social.id), method: :delete
           %td
             add schedule
 

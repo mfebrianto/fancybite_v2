@@ -4,11 +4,14 @@
       %td
         name
       %td
+      %td
         preview
     %tbody
       - social.social_images.each do |image|
         %tr
           %td
             = image.name || image.picture_file_name
+          %td
+            = link_to 'delete', admin_social_image_path(image.id), method: :delete
           %td
             %img{src: image.picture.url(:original)}

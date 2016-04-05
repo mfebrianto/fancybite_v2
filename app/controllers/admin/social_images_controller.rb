@@ -11,11 +11,10 @@ class Admin::SocialImagesController < Admin::AdminController
     end
   end
 
-  private
-
-
-  def show_all
-    @social_images = SocialImage
+  def destroy
+    image = SocialImage.find(params[:id])
+    id = image.social.id
+    image.destroy
+    redirect_to edit_admin_social_url(id)
   end
-
 end

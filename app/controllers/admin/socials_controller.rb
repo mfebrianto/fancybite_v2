@@ -35,4 +35,10 @@ class Admin::SocialsController < Admin::AdminController
       render action: 'edit'
     end
   end
+
+  def destroy
+    Social.find(params[:id]).destroy
+    @socials = Social.where(ready: true)
+    render action: 'index'
+  end
 end
