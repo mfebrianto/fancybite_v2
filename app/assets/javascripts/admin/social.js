@@ -11,18 +11,15 @@ fancybite.admin.social = {
 
         $('#social_submission_button').click(function(e){
             e.preventDefault();
+            console.log('test');
             $('#social_id_for_submission').val($('#social_id').val());
-            $('#new_social').submit();
+            $('.new_social').submit();
         });
     },
     saveImage : function(){
         var formData = new FormData();
         formData.append('picture', $('#picture')[0].files[0]);
-
-        var other_data = $('#social_image_form').serializeArray();
-        $.each(other_data,function(key,input){
-            formData.append(input.name,input.value);
-        });
+        formData.append('social_id', $('#social_id').val());
 
         $.ajax({
             type: 'POST',

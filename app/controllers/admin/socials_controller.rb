@@ -25,4 +25,14 @@ class Admin::SocialsController < Admin::AdminController
     end
   end
 
+  def edit
+    @social = Social.find(params[:id])
+  end
+
+  def update
+    @social = Social.find(params[:social_id_for_submission])
+    if @social.update_attributes(description: params['social']['description'])
+      render action: 'edit'
+    end
+  end
 end

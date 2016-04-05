@@ -8,6 +8,8 @@
         id
       %td
         description
+      %td
+      %td
     %tbody
       - @socials.each do |social|
         %tr
@@ -15,5 +17,9 @@
             = social.id
           %td
             = social.description
+          %td
+            = link_to 'edit', edit_admin_social_path(social.id)
+          %td
+            add schedule
 
 = link_to 'new', new_admin_social_path
