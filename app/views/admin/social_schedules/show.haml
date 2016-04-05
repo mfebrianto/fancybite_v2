@@ -1,0 +1,42 @@
+.row
+  %h1
+    This is where you set schedule of sharing
+
+  = hidden_field_tag 'social_id', @social.id
+
+%table
+  %thead
+    %td
+      day
+    %td
+      active
+    %td
+      time
+  %tbody
+    %tr
+      %td
+        Monday
+      %td
+      %td
+    %tr
+      %td
+        Tuesday
+      %td
+      %td
+    %tr
+      %td
+        Wednesday
+      %td
+      %td
+    %tr
+      %td
+        Thursday
+      %td
+      %td
+    %tr
+      %td
+        Friday
+      %td
+      %td
+
+= link_to 'back', admin_socials_path

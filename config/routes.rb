@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :promos
     resources :socials
     resources :social_images
+    resources :social_schedules
 
     get '/feature_controls' => 'feature_controls#index'
     get '/feature_controls/edit' => 'feature_controls#edit'

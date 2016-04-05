@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404230921) do
+ActiveRecord::Schema.define(version: 20160405223003) do
 
   create_table "basket_items", force: :cascade do |t|
     t.string   "basket_id",      limit: 255
@@ -146,6 +146,12 @@ ActiveRecord::Schema.define(version: 20160404230921) do
     t.string   "picture_content_type", limit: 255
     t.integer  "picture_file_size",    limit: 4
     t.datetime "picture_updated_at"
+  end
+
+  create_table "social_schedules", force: :cascade do |t|
+    t.string "social_id", limit: 255
+    t.string "day",       limit: 255
+    t.string "time",      limit: 255
   end
 
   create_table "socials", force: :cascade do |t|
