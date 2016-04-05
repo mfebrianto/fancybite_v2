@@ -1,2 +1,19 @@
 %h1
   this is where you put fb upload
+
+#socials-table
+  %table
+    %thead
+      %td
+        id
+      %td
+        description
+    %tbody
+      - @socials.each do |social|
+        %tr
+          %td
+            = social.id
+          %td
+            = social.description
+
+= link_to 'new', new_admin_social_path

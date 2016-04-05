@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402121117) do
+ActiveRecord::Schema.define(version: 20160404230921) do
 
   create_table "basket_items", force: :cascade do |t|
     t.string   "basket_id",      limit: 255
@@ -152,6 +152,7 @@ ActiveRecord::Schema.define(version: 20160402121117) do
     t.string   "description", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "ready"
   end
 
   create_table "users", force: :cascade do |t|
