@@ -15,5 +15,4 @@ module Admin::SocialSchedulesHelper
       return 'not present'
     end
   end
-
 end

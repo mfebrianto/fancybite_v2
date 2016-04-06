@@ -17,4 +17,10 @@ class Admin::SocialImagesController < Admin::AdminController
     image.destroy
     redirect_to edit_admin_social_url(id)
   end
+
+  private
+
+  def show_all
+    @social_images = SocialImage
+  end
 end

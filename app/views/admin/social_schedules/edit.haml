@@ -2,4 +2,28 @@
   %h1
     This is where you set schedule of sharing
 
+
+  = hidden_field_tag 'social_id', @social.id
+
+= form_tag admin_social_schedules_path do
+  %table
+    %thead
+      %td
+        day
+      %td
+        active
+      %td
+        time
+    %tbody
+      - Fbite::Standard.a_week.each do |day|
+        %tr
+          %td
+            = day
+          %td
+            = check_box_tag "social_schedules[#{day}][active]", 'active'
+          %td
+            = select_tag "social_schedules[#{day}][time]", options_for_select(Fbite::Standard.hours)
+
+  = submit_tag 'submit'
+
 = link_to 'back', admin_social_schedule_path(@social.id)
