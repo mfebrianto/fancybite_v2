@@ -4,4 +4,8 @@ class Admin::SocialSchedulesController < Admin::AdminController
     @social = Social.find(params[:id])
   end
 
+  def edit
+    @social = Social.find(params[:id])
+  end
+
 end
