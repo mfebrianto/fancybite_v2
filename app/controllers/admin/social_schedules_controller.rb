@@ -12,7 +12,7 @@ class Admin::SocialSchedulesController < Admin::AdminController
     @social = Social.find(params[:social_id])
     params[:social_schedules].each do |k,v|
       schedule = @social.social_schedules.select{|schedule| schedule.day == k.to_s}.first
-      schedule.update_attributes(time: v)
+      schedule.update_attributes(active: v['active'], time: v['time'])
     end
 
     render action: 'show'

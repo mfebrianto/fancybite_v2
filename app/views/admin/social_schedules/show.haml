@@ -13,55 +13,15 @@
     %td
       time
   %tbody
-    %tr
-      %td
-        Monday
-      %td
-        = show_active(@social, 'monday')
-      %td
-        = show_time(@social, 'monday')
-    %tr
-      %td
-        Tuesday
-      %td
-        = show_active(@social, 'tuesday')
-      %td
-        = show_time(@social, 'tuesday')
-    %tr
-      %td
-        Wednesday
-      %td
-        = show_active(@social, 'wednesday')
-      %td
-        = show_time(@social, 'wednesday')
-    %tr
-      %td
-        Thursday
-      %td
-        = show_active(@social, 'thursday')
-      %td
-        = show_time(@social, 'thursday')
-    %tr
-      %td
-        Friday
-      %td
-        = show_active(@social, 'friday')
-      %td
-        = show_time(@social, 'friday')
-    %tr
-      %td
-        Saturday
-      %td
-        = show_active(@social, 'saturday')
-      %td
-        = show_time(@social, 'saturday')
-    %tr
-      %td
-        Sunday
-      %td
-        = show_active(@social, 'sunday')
-      %td
-        = show_time(@social, 'sunday')
+    - Fbite::Standard.a_week.each do |day|
+      - detail = schedule_detail(@social, day)
+      %tr
+        %td
+          = day
+        %td
+          = detail.active
+        %td
+          = detail.time
 
 = link_to 'edit', edit_admin_social_schedule_path(@social.id)
 

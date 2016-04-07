@@ -3,6 +3,7 @@ class CreateSocialSchedule < ActiveRecord::Migration
     create_table :social_schedules do |t|
       t.string :social_id
       t.string :day
+      t.boolean :active
       t.integer :time
     end
   end

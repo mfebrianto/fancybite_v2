@@ -1,18 +1,7 @@
 module Admin::SocialSchedulesHelper
 
-  def show_active(social, day)
-    if social.social_schedules.present?
-      return 'active'
-    else
-      return 'not present'
-    end
+  def schedule_detail(social, day)
+    social.social_schedules.select{|schedule| schedule.day == day}.first
   end
 
-  def show_time(social, day)
-    if social.social_schedules.present?
-      return 'active'
-    else
-      return 'not present'
-    end
-  end
 end

@@ -14,13 +14,15 @@
         time
     %tbody
       - Fbite::Standard.a_week.each do |day|
+        - detail = schedule_detail(@social, day)
         %tr
           %td
             = day
           %td
-            = check_box_tag "social_schedules[#{day}][active]", 'active'
+            = check_box_tag "social_schedules[#{day}][active]", 'true', detail.active
           %td
-            = select_tag "social_schedules[#{day}][time]", options_for_select(Fbite::Standard.hours)
+            = select_tag "social_schedules[#{day}][time]", options_for_select(Fbite::Standard.hours, detail.time)
+
 
   = submit_tag 'submit'
 
