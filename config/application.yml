@@ -2,6 +2,9 @@
 defaults: &defaults
   instagram:
     access_token: '183654524.5996a5d.a24c28bcdc604f07915ae19bad50ea58'
+  facebook:
+    app_id: '1709524499336292'
+    app_secret: '05ba136ca2c96e05da730387f8a11789'
 
 development:
   <<: *defaults
