@@ -63,6 +63,6 @@
       %td
         = show_time(@social, 'sunday')
 
-= link_to 'edit', edit_admin_social_schedule_path
+= link_to 'edit', edit_admin_social_schedule_path(@social.id)
 
 = link_to 'back', admin_socials_path
