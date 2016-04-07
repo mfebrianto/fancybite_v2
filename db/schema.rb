@@ -149,9 +149,9 @@ ActiveRecord::Schema.define(version: 20160405223003) do
   end
 
   create_table "social_schedules", force: :cascade do |t|
-    t.string "social_id", limit: 255
-    t.string "day",       limit: 255
-    t.string "time",      limit: 255
+    t.string  "social_id", limit: 255
+    t.string  "day",       limit: 255
+    t.integer "time",      limit: 4
   end
 
   create_table "socials", force: :cascade do |t|

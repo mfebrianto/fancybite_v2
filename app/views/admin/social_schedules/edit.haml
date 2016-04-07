@@ -2,10 +2,8 @@
   %h1
     This is where you set schedule of sharing
 
-
-  = hidden_field_tag 'social_id', @social.id
-
 = form_tag admin_social_schedules_path do
+  = hidden_field_tag 'social_id', @social.id
   %table
     %thead
       %td
