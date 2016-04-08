@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405223003) do
+ActiveRecord::Schema.define(version: 20160408090707) do
 
   create_table "basket_items", force: :cascade do |t|
     t.string   "basket_id",      limit: 255

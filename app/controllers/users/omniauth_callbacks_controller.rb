@@ -2,9 +2,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
-  # You should also create an action method in this controller like this:
-  # def twitter
-  # end
+  def facebook
+    fb_user_interactor = FacebookUserInteractor.new({params: request.env['omniauth.auth'],
+                                                     current_user: current_user})
+    fb_user_interactor.process
+  end
 
   # More info at:
   # https://github.com/plataformatec/devise#omniauth
