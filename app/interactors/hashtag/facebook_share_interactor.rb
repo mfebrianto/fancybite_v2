@@ -9,14 +9,15 @@ class Hashtag::FacebookShareInteractor
   end
 
   def process
-    facebook_user = FacebookUser.new(user_id: current_user.id,
-                                     expires: params.credentials.expires,
-                                     expires_at: params.credentials.expires_at,
-                                     token: params.credentials.token,
-                                     email: params.extra.raw_info.email,
-                                     image: params.info.image,
-                                     name: params.extra.raw_info.name,
-                                     uid: params.uid)
+    facebook_user = FacebookUser.find_or_initialize_by(id: current_user.id)
+    facebook_user.user_id = current_user.id
+    facebook_user.expires = params.credentials.expires
+    facebook_user.expires_at = params.credentials.expires_at
+    facebook_user.token = params.credentials.token
+    facebook_user.email = params.extra.raw_info.email
+    facebook_user.image = params.info.image
+    facebook_user.name = params.extra.raw_info.name
+    facebook_user.uid = params.uid
     facebook_user.save
   end
 

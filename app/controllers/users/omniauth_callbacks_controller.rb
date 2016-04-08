@@ -3,9 +3,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # devise :omniauthable, omniauth_providers: [:twitter]
 
   def facebook
-    fb_user_interactor = FacebookUserInteractor.new({params: request.env['omniauth.auth'],
-                                                     current_user: current_user})
+    fb_user_interactor = Hashtag::FacebookShareInteractor.new({params: request.env['omniauth.auth'],
+                                                              current_user: current_user})
     fb_user_interactor.process
+
+    redirect_to request.referer
   end
 
   # More info at:
