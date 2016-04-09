@@ -53,7 +53,7 @@ gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-gem 'fb_graph2'
+gem 'fb_graph2', path: '/home/mfebrianto/dev/gems/fb_graph2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -16,7 +16,7 @@ class Hashtag::FacebookShareController < ApplicationController
 
     image_file = Social.last.social_images.last.picture.path
 
-    Hashtag::FacebookShareInteractor.post_to_my_wall(social.description)
+    Hashtag::FacebookShareInteractor.post_to_group(social.description, '')
 
     render nothing: true, status: :ok
   end
