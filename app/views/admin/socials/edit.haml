@@ -4,4 +4,6 @@
 .row
   = render partial: 'admin/socials/form', locals: { social: @social }
 
+= submit_tag 'publish now', id: 'social_publish_now_button'
+
 = link_to 'cancel', admin_socials_path

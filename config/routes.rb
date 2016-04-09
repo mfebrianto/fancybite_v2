@@ -28,6 +28,10 @@ Rails.application.routes.draw do
     post '/feature_controls/update_all' => 'feature_controls#update_all'
   end
 
+  namespace :hashtag do
+    resources :facebook_share
+  end
+
   # devise_scope :user do
   #   get 'sign_in', to: 'sessions#new'
   # end

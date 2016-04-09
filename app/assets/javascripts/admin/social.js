@@ -11,9 +11,13 @@ fancybite.admin.social = {
 
         $('#social_submission_button').click(function(e){
             e.preventDefault();
-            console.log('test');
             $('#social_id_for_submission').val($('#social_id').val());
             $('.new_social').submit();
+        });
+
+        $('#social_publish_now_button').click(function(e){
+            e.preventDefault();
+            fancybite.admin.social.publish();
         });
     },
     saveImage : function(){
@@ -30,6 +34,15 @@ fancybite.admin.social = {
             success: function(data){
                 $('#new-social-image-wrapper').replaceWith(data);
                 fancybite.admin.social.init();
+            }
+        });
+    },
+    publish: function(){
+        $.ajax({
+            type: 'POST',
+            url: '/hashtag/facebook_share',
+            success: function(data){
+                console.log('publish');
             }
         });
     }
