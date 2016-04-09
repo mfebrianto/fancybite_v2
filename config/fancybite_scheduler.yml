@@ -3,3 +3,8 @@ check_instagram_tags_number:
   class: 'InstagramWorker'
   queue: 'high'
   description: 'This job will instagram tag every 10m'
+share_on_facebook:
+  every: '1h'
+  class: 'FacebookShareWorker'
+  queue: 'high'
+  description: 'This job check whether there is a schedule to share in fb every hour'

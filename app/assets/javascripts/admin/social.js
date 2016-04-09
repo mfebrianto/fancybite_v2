@@ -41,6 +41,7 @@ fancybite.admin.social = {
         $.ajax({
             type: 'POST',
             url: '/hashtag/facebook_share',
+            data: {id: $('#social_id_publish').val()},
             success: function(data){
                 console.log('publish');
             }
