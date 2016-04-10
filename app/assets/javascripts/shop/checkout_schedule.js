@@ -7,7 +7,7 @@ fancybite.shop.checkout_schedule = {
         $('#date').change(function(){
             var schedule = fancybite.shop.checkout_schedule.getAvailableDeliveryTime(this.value);
             fancybite.shop.checkout_schedule.disableCheckoutScheduleOptions(schedule);
-            // TODO: need to move the active class too
+            fancybite.shop.checkout_schedule.moveActiveClass(schedule);
         });
     },
     getAvailableDeliveryTime: function(id){
@@ -52,14 +52,28 @@ fancybite.shop.checkout_schedule = {
         var $activeElement = $('.div-radio-button-group>div.disabled');
         $activeElement.removeClass('disabled');
 
-        if(schedule.morning){
+        if(schedule.morning != true){
             $('#morning-delivery').addClass('disabled');
         }
-        else if(schedule.afternoon){
+        if(schedule.afternoon != true){
             $('#afternoon-delivery').addClass('disabled');
         }
-        else if(schedule.evening){
+        if(schedule.evening != true){
             $('#evening-delivery').addClass('disabled');
+        }
+    },
+    moveActiveClass: function(schedule) {
+        var $activeElement = $('.div-radio-button-group>div.active');
+        $activeElement.removeClass('active');
+
+        if(schedule.morning == true){
+            $('#morning-delivery').addClass('active');
+        }
+        else if(schedule.afternoon == true){
+            $('#afternoon-delivery').addClass('active');
+        }
+        else if(schedule.evening == true){
+            $('#evening-delivery').addClass('active');
         }
     }
 }
