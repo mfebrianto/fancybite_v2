@@ -38,8 +38,17 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-end
 
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    paypal_options = {
+        login: 'michaelclairine_api1.gmail.com',
+        password: 'YB57FNEFE6XHUH4D',
+        signature: 'AFcWxV21C7fd0v3bYYYRCpSSRl31A9kIL6egnET0xZ2Rj5yppi52bh2M'
+    }
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+  end
+end
 Braintree::Configuration.environment = :sandbox
 Braintree::Configuration.merchant_id = 'q49svvkvgdrxt23r'
 Braintree::Configuration.public_key = 'tx85ztqd3n2rzgv3'

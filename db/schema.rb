@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324115851) do
+ActiveRecord::Schema.define(version: 20160410234337) do
 
   create_table "basket_items", force: :cascade do |t|
     t.string   "basket_id",      limit: 255
@@ -78,6 +78,19 @@ ActiveRecord::Schema.define(version: 20160324115851) do
     t.boolean "evening"
   end
 
+  create_table "facebook_users", force: :cascade do |t|
+    t.boolean  "expires"
+    t.decimal  "expires_at",             precision: 10
+    t.string   "token",      limit: 255
+    t.string   "email",      limit: 255
+    t.string   "image",      limit: 255
+    t.string   "name",       limit: 255
+    t.string   "uid",        limit: 255
+    t.string   "user_id",    limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "feature_controls", force: :cascade do |t|
     t.string  "name",        limit: 255
     t.string  "description", limit: 255
@@ -117,11 +130,45 @@ ActiveRecord::Schema.define(version: 20160324115851) do
     t.boolean  "featured"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.string   "ip",               limit: 255
+    t.string   "checkout_id",      limit: 255
+    t.string   "express_token",    limit: 255
+    t.string   "express_payer_id", limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
   create_table "promos", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "code",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "social_images", force: :cascade do |t|
+    t.string   "social_id",            limit: 255
+    t.string   "name",                 limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name",    limit: 255
+    t.string   "picture_content_type", limit: 255
+    t.integer  "picture_file_size",    limit: 4
+    t.datetime "picture_updated_at"
+  end
+
+  create_table "social_schedules", force: :cascade do |t|
+    t.string  "social_id", limit: 255
+    t.string  "day",       limit: 255
+    t.boolean "active"
+    t.integer "time",      limit: 4
+  end
+
+  create_table "socials", force: :cascade do |t|
+    t.string   "description", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "ready"
   end
 
   create_table "users", force: :cascade do |t|
@@ -140,6 +187,8 @@ ActiveRecord::Schema.define(version: 20160324115851) do
     t.string   "role",                   limit: 255
     t.string   "given_name",             limit: 255
     t.string   "sure_name",              limit: 255
+    t.string   "provider",               limit: 255
+    t.string   "uid",                    limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

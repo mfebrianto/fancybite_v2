@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   resources :delivery_coverage
   resources :delivery_time_schedule
 
+  namespace :payments do
+    resources :confirmation
+    resources :paypal
+  end
+
   namespace :admin do
     resources :dashboard
     resources :menus
