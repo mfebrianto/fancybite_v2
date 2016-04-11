@@ -8,12 +8,21 @@
       = select_tag 'date', options_for_select(delivery_dates)
 
   .small-12.medium-12.large-12.columns.text-centre.div-radio-button-group
-    #morning-delivery.small-4.medium-4.large-4.columns.div-radio-button.text-centre{class: class_shown(first_delivery_time.morning)}
+    #morning-delivery.delivery-button.small-4.medium-4.large-4.columns.div-radio-button.text-centre{class: class_shown(first_delivery_time.morning)}
       Morning
       = radio_button_tag 'delivery', 'morning', first_delivery_time.morning, class: 'input-div-radio-button'
-    #afternoon-delivery.small-4.medium-4.large-4.columns.div-radio-button.text-centre.active{class: class_shown(first_delivery_time.afternoon)}
+    #afternoon-delivery.delivery-button.small-4.medium-4.large-4.columns.div-radio-button.text-centre.active{class: class_shown(first_delivery_time.afternoon)}
       Afternoon
       = radio_button_tag 'delivery', 'afternoon', first_delivery_time.afternoon, class: 'input-div-radio-button'
-    #evening-delivery.small-4.medium-4.large-4.columns.div-radio-button.text-centre{class: class_shown(first_delivery_time.evening)}
+    #evening-delivery.delivery-button.small-4.medium-4.large-4.columns.div-radio-button.text-centre{class: class_shown(first_delivery_time.evening)}
       Evening
       = radio_button_tag 'delivery', 'evening', first_delivery_time.evening, class: 'input-div-radio-button'
+
+.small-12.columns.checkout-block.margin-top
+  .checkout-block-sub
+    #delivery-morning-highlight.delivery-highlight.hidden
+      Delivery 8am - 11am. We will send you text message 30 minutes before we arrived.
+    #delivery-afternoon-highlight.delivery-highlight.hidden
+      Delivery 12am - 2pm. We will send you text message 30 minutes before we arrived.
+    #delivery-evening-highlight.delivery-highlight.hidden
+      Delivery 6pm - 9pm. We will send you text message 30 minutes before we arrived.

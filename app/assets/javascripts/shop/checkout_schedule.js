@@ -1,7 +1,36 @@
 fancybite.shop.checkout_schedule = {
     init: function(){
         this.buttonsReadyOnClick(),
-        this.changeDeliveryDate()
+        this.changeDeliveryDate(),
+        this.chooseDeliveryTime()
+    },
+    chooseDeliveryTime: function(){
+        $(".delivery-button").click(function(e){
+            var $clickedElement = $(e.target);
+            if($clickedElement.hasClass('disabled')){
+                console.log('ignored');
+            }
+            else{
+                fancybite.shop.checkout_schedule.processDeliveryTimeOption($clickedElement.attr('id'));
+            }
+        });
+    },
+    processDeliveryTimeOption: function(time){
+        var $hiddenElements = $('.delivery-highlight');
+        $hiddenElements.removeClass('hidden');
+
+        if(/morning/.test(time)){
+            $('#delivery-afternoon-highlight').addClass('hidden');
+            $('#delivery-evening-highlight').addClass('hidden');
+        }
+        else if(/afternoon/.test(time)){
+            $('#delivery-morning-highlight').addClass('hidden');
+            $('#delivery-evening-highlight').addClass('hidden');
+        }
+        else if(/evening/.test(time)){
+            $('#delivery-morning-highlight').addClass('hidden');
+            $('#delivery-afternoon-highlight').addClass('hidden');
+        }
     },
     changeDeliveryDate: function(){
         $('#date').change(function(){
@@ -68,12 +97,15 @@ fancybite.shop.checkout_schedule = {
 
         if(schedule.morning == true){
             $('#morning-delivery').addClass('active');
+            fancybite.shop.checkout_schedule.processDeliveryTimeOption('morning');
         }
         else if(schedule.afternoon == true){
             $('#afternoon-delivery').addClass('active');
+            fancybite.shop.checkout_schedule.processDeliveryTimeOption('afternoon');
         }
         else if(schedule.evening == true){
             $('#evening-delivery').addClass('active');
+            fancybite.shop.checkout_schedule.processDeliveryTimeOption('evening');
         }
     }
 }
