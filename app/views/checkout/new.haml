@@ -12,10 +12,10 @@
 .row
   .small-12.columns
     .text-centre
-      #checkout-submit-button.button
+      #checkout-submit-button.button.hidden
         Submit
 
-      = link_to 'PayPal', new_payments_paypal_path
+      = link_to 'proceed to PayPal', new_payments_paypal_path, class: 'button', id: 'paypal_button'
 
 
 :javascript

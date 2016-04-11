@@ -10,15 +10,17 @@
   Payment Method
   .checkout-block-sub
     = form_tag('/payments', method: :post, id: 'payment_detail_form') do
-      = radio_button_tag 'payment_method', 'cod', '0'
+      = radio_button_tag 'payment_method', '0'
       = label_tag 'Cash on Delivery'
-      = radio_button_tag 'payment_method', 'paypal', '1'
+      = radio_button_tag 'payment_method', '1', true
       = label_tag 'PayPal'
 
   .checkout-block-sub
-    .checkout-highlight
+    #cod_checkout_highlight.checkout-highlight.hidden
       You need to verify your email to purchase using this method.
       Why not become a member and get free stuff instead ?
+    #paypal_checkout_highlight.checkout-highlight
+      You will be redirected to PayPal to complete the payment
 
   -#credit card
     -# soon

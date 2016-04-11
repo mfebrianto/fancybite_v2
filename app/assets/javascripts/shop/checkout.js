@@ -13,6 +13,26 @@ fancybite.shop.checkout = {
               fancybite.shop.checkout.isPostcodeOnCoverage(postcode)
           }
       });
+      $('#payment_method_0').click(function(){
+          fancybite.shop.checkout.chooseCOD();
+      });
+      $('#payment_method_1').click(function(){
+          fancybite.shop.checkout.choosePayPal();
+      });
+    },
+    chooseCOD: function(){
+        $('#cod_checkout_highlight').removeClass('hidden');
+        $('#paypal_checkout_highlight').addClass('hidden');
+
+        $('#paypal_button').addClass('hidden');
+        $('#checkout-submit-button').removeClass('hidden');
+    },
+    choosePayPal: function(){
+        $('#cod_checkout_highlight').addClass('hidden');
+        $('#paypal_checkout_highlight').removeClass('hidden');
+
+        $('#paypal_button').removeClass('hidden');
+        $('#checkout-submit-button').addClass('hidden');
     },
     isPostcodeOnCoverage: function(postcode){
         $.ajax({
