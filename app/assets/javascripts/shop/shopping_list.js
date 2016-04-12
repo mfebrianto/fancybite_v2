@@ -12,6 +12,9 @@ fancybite.shop.shopping_list = {
     hideCheckoutButton: function(){
         $('#checkout-button').hide();
     },
+    showCheckoutButton: function(){
+        $('#checkout-button').show();
+    },
     hideDeleteButton: function(){
         $('.shopping-list-remove-item').hide();
     },
@@ -26,6 +29,14 @@ fancybite.shop.shopping_list = {
         $('.shopping-list-total').html(
             this.totalToHtmlTable(data)
         )
+
+        if(this.totalItems(data.items) > 0){
+            this.showCheckoutButton();
+        }
+        else{
+            this.hideCheckoutButton();
+        }
+
     },
     totalToHtmlTable: function(data){
         return 'Total $'+this.totalItems(data.items);
