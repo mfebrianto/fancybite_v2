@@ -4,50 +4,57 @@
 
   = form_tag('/checkout', method: :post, id: 'customer_detail_form', data: { abide: '' }, novalidate: 'novalidate') do
     .checkout-input
-      = label_tag 'given_name' do
+      = label_tag 'customer[given_name]' do
         Given Name
-        = text_field_tag 'given_name', nil, required: true
+        = text_field_tag 'customer[given_name]', nil, required: true
       %small.error
         required
 
     .checkout-input
-      = label_tag 'sure_name' do
+      = label_tag 'customer[sure_name]' do
         Sure Name
-        = text_field_tag 'sure_name', nil, required: true
+        = text_field_tag 'customer[sure_name]', nil, required: true
       %small.error
         required
 
     .checkout-input
-      = label_tag 'email' do
+      = label_tag 'customer[email]' do
         Email
-        = text_field_tag 'email', nil, required: true
+        = text_field_tag 'customer[email]', nil, required: true
       %small.error
         required
 
     .checkout-input
-      = label_tag 'address' do
+      = label_tag 'customer[phone_number]' do
+        Phone
+        = text_field_tag 'customer[phone_number]', nil, required: true
+      %small.error
+        required
+
+    .checkout-input
+      = label_tag 'customer[address]' do
         address
-        = text_field_tag 'address', nil, required: true
+        = text_field_tag 'customer[address]', nil, required: true
       %small.error
         required
 
     .checkout-input
-      = label_tag 'suburb' do
+      = label_tag 'customer[suburb]' do
         suburb
-        = text_field_tag 'suburb', nil, required: true
+        = text_field_tag 'customer[suburb]', nil, required: true
       %small.error
         required
 
     .checkout-input
-      = label_tag 'city' do
+      = label_tag 'customer[city]' do
         city
-        = text_field_tag 'city', nil, required: true
+        = text_field_tag 'customer[city]', nil, required: true
       %small.error
         required
 
     .checkout-input
-      = label_tag 'postcode' do
+      = label_tag 'customer[postcode]' do
         postcode
-        = text_field_tag 'postcode', nil, required: true, pattern: 'postcode_aus'
+        = text_field_tag 'customer[postcode]', nil, required: true, pattern: 'postcode_aus'
       %small.error
         please put in a valid postcode

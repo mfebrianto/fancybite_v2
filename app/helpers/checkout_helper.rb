@@ -1,7 +1,7 @@
 module CheckoutHelper
 
   def delivery_dates
-    available_schedules = DeliveryTimeSchedule.where("schedule_date > ?", Date.today)
+    available_schedules = DeliveryTimeSchedule.where("schedule_date > ?", Date.today + Settings.order.days_ahead.days)
     available_days = []
     available_schedules.each do |schedule|
       available_days << [schedule.schedule_date.strftime("%A, %d-%m-%Y"), schedule.id]

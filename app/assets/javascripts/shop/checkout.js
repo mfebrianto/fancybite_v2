@@ -84,7 +84,7 @@ fancybite.shop.checkout = {
         return !status;
     },
     submission: function(){
-        $('#checkout-submit-button').click(function(e){
+        $('.checkout-button').click(function(e){
             e.preventDefault();
 
             if (fancybite.shop.checkout.IsCustomerDataFormValid()){
@@ -92,9 +92,8 @@ fancybite.shop.checkout = {
                     type: 'POST',
                     url: '/customers',
                     data: $('#customer_detail_form').serialize(),
-                    success: function(){
-                        console.log('success');
-                        fancybite.shop.checkout.submitPayment();
+                    success: function(data){
+                        fancybite.shop.checkout.submitPayment(data.checkout_id);
                     }
                 });
             } else{
@@ -102,22 +101,21 @@ fancybite.shop.checkout = {
             }
         })
     },
-    submitPayment: function(){
+    submitPayment: function(checkout_id){
         $.ajax({
             type: 'POST',
             url: '/payments',
-            data: $('#payment_detail_form').serialize(),
+            data: $('#payment_detail_form').serialize() + '&checkout_id=' + checkout_id,
             success: function(){
-                console.log('success');
-                fancybite.shop.checkout.submitDelivery();
+                fancybite.shop.checkout.submitDelivery(checkout_id);
             }
         });
     },
-    submitDelivery: function(){
+    submitDelivery: function(checkout_id){
         $.ajax({
             type: 'POST',
             url: '/checkout',
-            data: $('#checkout_detail_form').serialize(),
+            data: $('#checkout_detail_form').serialize() + '&checkout_id=' + checkout_id,
             success: function(){
                 console.log('success');
             }

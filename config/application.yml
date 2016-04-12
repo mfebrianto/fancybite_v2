@@ -2,6 +2,9 @@
 defaults: &defaults
   instagram:
     access_token: '183654524.5996a5d.a24c28bcdc604f07915ae19bad50ea58'
+  order:
+    days_ahead: 2
+    min: 3
 
 development:
   <<: *defaults
